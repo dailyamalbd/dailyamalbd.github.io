@@ -230,7 +230,7 @@ function more(){
   var th=store("theme")||"auto",adj=HA();
   return '<div class="card" style="margin-top:0"><h3 style="margin:0 0 4px;font-size:20px">সেটিংস</h3><div class="set"><span>শহর</span><select id="city2">'+Object.keys(CITIES).map(function(x){return '<option'+(x===S.city?' selected':'')+'>'+x+'</option>'}).join('')+'</select></div>'+
   '<div class="set"><span>থিম</span><select id="theme"><option value="auto"'+(th==="auto"?" selected":"")+'>স্বয়ংক্রিয়</option><option value="light"'+(th==="light"?" selected":"")+'>লাইট</option><option value="dark"'+(th==="dark"?" selected":"")+'>ডার্ক</option></select></div>'+
-  '<div class="set" style="flex-direction:column;align-items:stretch;gap:8px"><span>কুরআন PDF-এর লিংক</span><input id="qurl" type="url" placeholder="https://… (Google Drive বা অন্য লিংক)" value="'+String(store("qurl")||"").replace(/"/g,"&quot;")+'" style="font-family:inherit;font-size:15px;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)"><span class="mut" style="font-size:13px">লিংক দিলে "কুরআন" বাটন ও হোমের "কুরআন দিয়ে শুরু করি" বাটন সেই PDF খুলবে। খালি রাখলে quran.com খুলবে।</span></div>'+'<div class="set"><span>হিজরি তারিখ সমন্বয়</span><span><button class="btn" id="hm">−</button> <b>'+bn(adj)+'</b> <button class="btn" id="hp">+</button></span></div>'+
+'<div class="set"><span>হিজরি তারিখ সমন্বয়</span><span><button class="btn" id="hm">−</button> <b>'+bn(adj)+'</b> <button class="btn" id="hp">+</button></span></div>'+
   '<p class="mut">নামাজের সময় গণনা করা হয় (কারাচি পদ্ধতি, আসরের জন্য হানাফি)। স্থানীয় মসজিদ বা সরকারি সময়সূচির সাথে মিলিয়ে নিন। চাঁদ দেখার ভিত্তিতে হিজরি তারিখ এক দিন এদিক-ওদিক হতে পারে, তাই সমন্বয়ের বাটন রাখা হয়েছে।</p></div>'}
 
 
@@ -238,11 +238,10 @@ function more(){
 var GO=[["q","কুরআন",5,"📖"],["h","হাদিস",1,"📜"],["d","দরূদ",10,"💚"],["i","ইস্তেগফার",100,"🌿"],["z","যিকির",33,"☀️"]];
 function gd(k){return store("g_"+k)||{}}
 function ring(p){var c=2*Math.PI*26;return '<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26" fill="none" stroke="var(--gl)" stroke-width="5"/><circle cx="30" cy="30" r="26" fill="none" stroke="var(--g)" stroke-width="5" stroke-linecap="round" stroke-dasharray="'+c*p+' '+c+'" transform="rotate(-90 30 30)"/></svg>'}
-function goals(k){var g=gd(k);return '<div class="card" style="margin-top:0"><div class="gl">'+GO.map(function(x){var v=g[x[0]]||0;return '<button class="g" data-g="'+x[0]+'" aria-label="'+x[1]+'"><div class="rg">'+ring(v/x[2])+x[3]+'</div>'+x[1]+'<small>'+bn(v)+'/'+bn(x[2])+'</small></button>'}).join('')+'</div><a class="go" href="'+QL()+'" target="_blank" rel="noopener">কুরআন দিয়ে শুরু করি</a></div>'}
-function QL(){return store("qurl")||"https://quran.com"}
+function goals(k){var g=gd(k);return '<div class="card" style="margin-top:0"><div class="gl">'+GO.map(function(x){var v=g[x[0]]||0;return '<button class="g" data-g="'+x[0]+'" aria-label="'+x[1]+'"><div class="rg">'+ring(v/x[2])+x[3]+'</div>'+x[1]+'<small>'+bn(v)+'/'+bn(x[2])+'</small></button>'}).join('')+'</div><button class="go" data-sub="quran" style="border:0;width:100%;font-family:inherit;cursor:pointer">কুরআন দিয়ে শুরু করি</button></div>'}
 function featGrid(){var p=Math.round(count(key(dnow()))/TOTAL*100);
   var L='https://quran.com';
-  return '<div class="fg"><button class="fi" data-tab="amal"><i>'+bn(p)+'%</i>ট্র্যাকার</button><a class="fi" href="'+QL()+'" target="_blank" rel="noopener"><i>📖</i>কুরআন</a><button class="fi" data-sub="qibla"><i>🕋</i>কিবলা</button><button class="fi" data-sub="ruq"><i>🛡️</i>রুকইয়াহ</button><a class="fi" href="'+L+'" target="_blank" rel="noopener"><i>🎧</i>তিলাওয়াত</a><a class="fi" href="'+L+'" target="_blank" rel="noopener"><i>📚</i>তাফসীর</a><div class="fi soon"><i>☝️</i>৯৯ নাম</div><button class="fi" data-sub="tasbih"><i>📿</i>তাসবিহ</button></div>'}
+  return '<div class="fg"><button class="fi" data-tab="amal"><i>'+bn(p)+'%</i>ট্র্যাকার</button><button class="fi" data-sub="quran"><i>📖</i>কুরআন</button><button class="fi" data-sub="qibla"><i>🕋</i>কিবলা</button><button class="fi" data-sub="ruq"><i>🛡️</i>রুকইয়াহ</button><a class="fi" href="'+L+'" target="_blank" rel="noopener"><i>🎧</i>তিলাওয়াত</a><a class="fi" href="'+L+'" target="_blank" rel="noopener"><i>📚</i>তাফসীর</a><div class="fi soon"><i>☝️</i>৯৯ নাম</div><button class="fi" data-sub="tasbih"><i>📿</i>তাসবিহ</button></div>'}
 function back(){return '<button class="btn" data-sub="" style="margin:12px 20px">← ফিচার্সে ফিরুন</button>'}
 function qibla(){var c=CITIES[S.city],p1=c[0],p2=21.4225,dl=39.8262-c[1];
   var br=fa(atan2(sin(dl)*cos(p2),cos(p1)*sin(p2)-sin(p1)*cos(p2)*cos(dl)));S.qb=br;
@@ -254,7 +253,62 @@ var RUQ=[
  {t:"সূরা ফালাক",a:"قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِن شَرِّ مَا خَلَقَ ۝ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ"},
  {t:"সূরা নাস",a:"قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ"}];
 function ruq(){return back()+'<div class="card" style="margin-top:0"><h3 style="margin:0 0 4px;font-size:20px">রুকইয়াহ</h3><div class="mut">হেফাজত ও আশ্রয় প্রার্থনার জন্য পঠিত সূরা ও আয়াত। আরবি পাঠ কুরআনের নির্ভরযোগ্য কপির সাথে মিলিয়ে নিন। অসুস্থতায় চিকিৎসকের পরামর্শও নিন।</div>'+RUQ.map(function(d){return '<div class="dua"><h4>'+d.t+'</h4><div class="ar">'+d.a+'</div></div>'}).join('')+'</div>'}
-function feat(){if(S.sub==="qibla")return qibla();if(S.sub==="tasbih")return tasbih();if(S.sub==="ruq")return ruq();
+// ---------- কুরআন পাঠ (এমদাদিয়া লাইব্রেরী, নূরানী হাফেজী) ----------
+var QN=612,QPER=60;
+var QS=[[1,"ফাতিহা",2],[2,"বাকারা",3],[3,"আলে ইমরান",51],[4,"নিসা",78],[5,"মায়িদা",107],[6,"আনআম",129],[7,"আ'রাফ",152],[8,"আনফাল",178],[9,"তাওবা",188],[10,"ইউনুস",209],[11,"হূদ",222],[12,"ইউসুফ",236],[13,"রা'দ",250],[14,"ইবরাহীম",256],[15,"হিজর",262],[16,"নাহল",268],[17,"বনী ইসরাঈল",283],[18,"কাহফ",294],[19,"মারইয়াম",306],[20,"ত্বহা",313],[21,"আম্বিয়া",323],[22,"হজ্জ",332],[23,"মু'মিনূন",343],[24,"নূর",351],[25,"ফুরকান",360],[26,"শু'আরা",367],[27,"নামল",377],[28,"কাসাস",386],[29,"আনকাবূত",397],[30,"রূম",405],[31,"লুকমান",412],[32,"সাজদাহ",416],[33,"আহযাব",419],[34,"সাবা",429],[35,"ফাতির",435],[36,"ইয়াসীন",441],[37,"সাফফাত",446],[38,"সোয়াদ",453],[39,"যুমার",459],[40,"গাফির (মু'মিন)",468],[41,"ফুসসিলাত (হা-মীম সাজদাহ)",478],[42,"শূরা",484],[43,"যুখরুফ",490],[44,"দুখান",496],[45,"জাসিয়া",499],[46,"আহকাফ",503],[47,"মুহাম্মাদ",507],[48,"ফাতহ",512],[49,"হুজুরাত",516],[50,"কাফ",519],[51,"যারিয়াত",521],[52,"তূর",524],[53,"নাজম",527],[54,"কামার",529],[55,"আর-রাহমান",532],[56,"ওয়াকিয়া",535],[57,"হাদীদ",538],[58,"মুজাদালা",543],[59,"হাশর",546],[60,"মুমতাহিনা",550],[61,"সাফ",552],[62,"জুমুআ",554],[63,"মুনাফিকূন",555],[64,"তাগাবুন",557],[65,"তালাক",559],[66,"তাহরীম",561],[67,"মুলক",563],[68,"কলম",565],[69,"হাক্কাহ",568],[70,"মাআরিজ",570],[71,"নূহ",572],[72,"জিন",574],[73,"মুয্যাম্মিল",577],[74,"মুদ্দাসসির",579],[75,"কিয়ামাহ",581],[76,"ইনসান (দাহর)",583],[77,"মুরসালাত",585],[78,"নাবা",587],[79,"নাযিআত",588],[80,"আবাসা",590],[81,"তাকভীর",591],[82,"ইনফিতার",592],[83,"মুতাফফিফীন",593],[84,"ইনশিকাক",595],[85,"বুরূজ",596],[86,"তারিক",597],[87,"আ'লা",598],[88,"গাশিয়াহ",598],[89,"ফাজর",599],[90,"বালাদ",601],[91,"শামস",601],[92,"লাইল",602],[93,"দুহা",603],[94,"ইনশিরাহ",603],[95,"তীন",604],[96,"আলাক",604],[97,"কদর",605],[98,"বায়্যিনাহ",605],[99,"যিলযাল",606],[100,"আদিয়াত",606],[101,"কারিআহ",607],[102,"তাকাসুর",607],[103,"আসর",608],[104,"হুমাযাহ",608],[105,"ফীল",608],[106,"কুরাইশ",609],[107,"মাউন",609],[108,"কাউসার",609],[109,"কাফিরূন",609],[110,"নাসর",610],[111,"লাহাব",610],[112,"ইখলাস",610],[113,"ফালাক",611],[114,"নাস",611],[0,"দোয়া খতমুল কুরআন",612]];
+var Q={packs:{},wait:{},zoom:0};
+function qen(s){return String(s).replace(/[০-৯]/g,function(c){return "০১২৩৪৫৬৭৮৯".indexOf(c)})}
+var QPS=[3,23,43,63,83,103,123,143,163,183,203,223,243,263,283,303,323,343,363,383,403,423,443,463,483,503,523,543,563,587];
+function qparah(p){var r=1;QPS.forEach(function(x,i){if(p>=x)r=i+1});return r}
+function qsurah(p){var n=parseInt(store("qsurn"),10),r=QS[0],f=null;QS.forEach(function(s){if(s[2]<=p)r=s;if(s[0]===n&&s[2]===p)f=s});return f||r}
+function qcur(){var p=parseInt(store("qpage"),10);if(!(p>=1))p=2;return Math.max(1,Math.min(QN,p))}
+function qpack(k){
+  if(Q.packs[k])return Promise.resolve(Q.packs[k]);
+  if(Q.wait[k])return Q.wait[k];
+  Q.wait[k]=fetch("quran-"+pad(k)+".bin").then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(function(buf){
+    var dv=new DataView(buf),n=dv.getUint32(0,true),off=4+4*n,u=[],i,len;
+    for(i=0;i<n;i++){len=dv.getUint32(4+4*i,true);u.push(URL.createObjectURL(new Blob([buf.slice(off,off+len)],{type:"image/webp"})));off+=len}
+    Q.packs[k]=u;delete Q.wait[k];return u}).catch(function(e){delete Q.wait[k];throw e});
+  return Q.wait[k]}
+function qclean(k){Object.keys(Q.packs).forEach(function(x){if(Math.abs(x-k)>1){Q.packs[x].forEach(function(u){URL.revokeObjectURL(u)});delete Q.packs[x]}})}
+function qpost(){
+  var p=qcur(),k=Math.floor((p-1)/QPER),i=(p-1)%QPER,im=document.getElementById("qimg"),st=document.getElementById("qst"),np=Math.ceil(QN/QPER);
+  if(!im)return;
+  qpack(k).then(function(u){
+    if(qcur()!==p||!document.getElementById("qimg"))return;
+    document.getElementById("qimg").src=u[i];if(st)st.textContent="";
+    if(i>=QPER-6&&k+1<np)qpack(k+1).catch(function(){});
+    if(i<5&&k>0)qpack(k-1).catch(function(){});
+    qclean(k)}).catch(function(){if(st)st.textContent="পৃষ্ঠাটি লোড হয়নি। ইন্টারনেট চালু করে আবার চেষ্টা করুন। একবার খোলা পৃষ্ঠা অফলাইনেও খোলে।"})}
+function qgo(p){p=Math.max(1,Math.min(QN,p));store("qpage",p);render();document.getElementById("main").scrollTop=0}
+function qact(a){
+  var p=qcur();
+  if(a==="next"){if(p<QN)qgo(p+1);return}
+  if(a==="prev"){if(p>1)qgo(p-1);return}
+  if(a==="zoom"){Q.zoom=(Q.zoom+1)%3;render();return}
+  if(a==="go"){var v=parseInt(qen(document.getElementById("qnum").value),10);if(v>=1&&v<=QN)qgo(v);else{var s=document.getElementById("qst");if(s)s.textContent="১ থেকে "+bn(QN)+" এর মধ্যে পৃষ্ঠা নম্বর লিখুন।"}return}
+  if(a==="dl"){var np=Math.ceil(QN/QPER),k=0,m=document.getElementById("qdl");
+    var step=function(){if(k>=np){if(m)m.textContent="সব পৃষ্ঠা ফোনে সেভ হয়েছে। এখন ইন্টারনেট ছাড়াই পড়া যাবে।";store("qoff",1);return}
+      if(m)m.textContent="সেভ হচ্ছে… "+bn(k)+"/"+bn(np);
+      fetch("quran-"+pad(k)+".bin").then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(function(){k++;step()}).catch(function(){if(m)m.textContent="সেভ করা যায়নি। ইন্টারনেট ঠিক আছে কিনা দেখে আবার চেষ্টা করুন।"})};
+    step()}}
+function quranView(){
+  var p=qcur(),pr=qparah(p),sr=qsurah(p),z=[100,160,230][Q.zoom];
+  var po="",i;for(i=1;i<=30;i++)po+='<option value="'+QPS[i-1]+'"'+(i===pr?" selected":"")+'>পারা '+bn(i)+'</option>';
+  var so=QS.map(function(s,j){return '<option value="'+j+'"'+(s[0]===sr[0]?" selected":"")+'>'+(s[0]>0?bn(s[0])+'. ':'')+s[1]+'</option>'}).join("");
+  var inp='width:64px;font-family:inherit;font-size:16px;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-align:center';
+  return back()+'<div class="card" style="margin-top:0;padding-bottom:12px"><h3 style="margin:0 0 2px;font-size:20px">কুরআন শরীফ</h3><div class="mut" style="margin-bottom:10px">নূরানী হাফেজী, এমদাদিয়া লাইব্রেরী</div>'+
+  '<div style="display:flex;gap:8px"><select id="qsur" style="flex:3;min-width:0">'+so+'</select><select id="qpar" style="flex:2;min-width:0">'+po+'</select></div>'+
+  '<div style="display:flex;gap:8px;align-items:center;margin-top:10px"><button class="btn" data-qa="prev"'+(p<=1?" disabled":"")+' aria-label="আগের পৃষ্ঠা">←</button><input id="qnum" inputmode="numeric" aria-label="পৃষ্ঠা নম্বর" value="'+bn(p)+'" style="'+inp+'"><button class="btn" data-qa="go">যান</button><button class="btn" data-qa="next"'+(p>=QN?" disabled":"")+' aria-label="পরের পৃষ্ঠা">→</button><span class="mut" style="flex:1;text-align:right;font-size:13px">পৃষ্ঠা '+bn(p)+' / '+bn(QN)+'</span></div></div>'+
+  '<div id="qwrap" style="overflow:auto;background:#fff;margin:0 8px;border-radius:10px;border:1px solid var(--line);min-height:240px;touch-action:'+(Q.zoom?'auto':'pan-y')+'"><img id="qimg" alt="কুরআনের পৃষ্ঠা '+bn(p)+'" draggable="false" style="display:block;width:'+z+'%;height:auto"></div>'+
+  '<div id="qst" class="mut" style="margin:8px 20px;text-align:center"></div>'+
+  '<div style="display:flex;gap:8px;margin:8px 20px"><button class="btn" data-qa="prev" style="flex:1"'+(p<=1?" disabled":"")+'>← আগের</button><button class="btn" data-qa="zoom" style="flex:1">🔍 '+bn(z)+'%</button><button class="btn" data-qa="next" style="flex:1"'+(p>=QN?" disabled":"")+'>পরের →</button></div>'+
+  '<div class="mut" style="margin:4px 20px 0;text-align:center;font-size:13px">ডানে সোয়াইপ করলে পরের পৃষ্ঠা, বামে সোয়াইপ করলে আগের পৃষ্ঠা</div>'+
+  '<div class="card"><button class="btn" data-qa="dl" style="width:100%">অফলাইনের জন্য সব পৃষ্ঠা ফোনে সেভ করুন</button><div id="qdl" class="mut" style="margin-top:8px;text-align:center;font-size:14px">'+(store("qoff")?"আগে একবার সেভ করা হয়েছে।":"প্রায় "+bn(Math.round(QN*0.04))+" MB ডেটা লাগবে। Wi-Fi-তে করা ভালো।")+'</div></div>'}
+var qtx=null;
+document.addEventListener("touchstart",function(e){var w=e.target.closest&&e.target.closest("#qwrap");qtx=(w&&Q.zoom===0)?[e.touches[0].clientX,e.touches[0].clientY]:null},{passive:true});
+document.addEventListener("touchend",function(e){if(!qtx)return;var t=e.changedTouches[0],dx=t.clientX-qtx[0],dy=t.clientY-qtx[1];qtx=null;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.6)qact(dx>0?"next":"prev")},{passive:true});
+function feat(){if(S.sub==="quran")return quranView();if(S.sub==="qibla")return qibla();if(S.sub==="tasbih")return tasbih();if(S.sub==="ruq")return ruq();
   return '<div class="card" style="margin-top:0"><h3 style="margin:0;font-size:20px">ফিচার্স</h3>'+featGrid()+'</div>'+forbSec(prayerState())}
 function fbWin(ps){var t=ps.t;return [[t.sunrise,t.sunrise+.25,"সূর্যোদয়ের সময়"],[t.dhuhr-.14,t.dhuhr,"ঠিক দুপুর (যাওয়াল)"],[t.sunset-.25,t.sunset,"সূর্যাস্তের সময়"]]}
 function fbNow(ps){var n=dnow(),h=n.getUTCHours()+n.getUTCMinutes()/60,w=fbWin(ps);for(var i=0;i<3;i++)if(h>=w[i][0]&&h<w[i][1])return i;return -1}
@@ -353,9 +407,10 @@ function render(){
   var m=document.getElementById("main"),sc=m.scrollTop;
   m.innerHTML=S.tab==="home"?(S.goal?goalView():home()):S.tab==="amal"?amal():S.tab==="dua"?duaTab():S.tab==="feat"?feat():more();
   document.getElementById("nav").innerHTML=TABS.map(function(t){return '<button class="'+(S.tab===t[0]?'on':'')+'" data-tab="'+t[0]+'"><b>'+t[1]+'</b>'+t[2]+'</button>'}).join('');
-  m.scrollTop=sc}
+  m.scrollTop=sc;if(S.tab==="feat"&&S.sub==="quran")qpost()}
 document.addEventListener("click",function(e){
   var b=e.target.closest("button");if(!b)return;
+  if(b.dataset.qa){qact(b.dataset.qa);return}
   if(b.dataset.tab){S.tab=b.dataset.tab;S.sub="";S.goal=null;render();return}
   if(b.dataset.t){toggle(S.tab==="home"?key(dnow()):S.day,b.dataset.t);render();return}
   if(b.dataset.d){S.day=b.dataset.d;render();return}
@@ -375,8 +430,10 @@ document.addEventListener("click",function(e){
   if(b.id==="hm"){store("hadj",HA()-1);render()}
   if(b.id==="hp"){store("hadj",HA()+1);render()}});
 document.addEventListener("change",function(e){
+  if(e.target.id==="qpar"){qgo(parseInt(e.target.value,10));return}
+  if(e.target.id==="qsur"){var s=QS[parseInt(e.target.value,10)];store("qsurn",s[0]);qgo(s[2]);return}
+  if(e.target.id==="qnum"){qact("go");return}
   if(e.target.id==="city"||e.target.id==="city2"){S.city=e.target.value;store("city",S.city);render()}
-  if(e.target.id==="qurl"){var u=e.target.value.trim();store("qurl",/^https?:\/\//.test(u)?u:null)}
   if(e.target.id==="theme"){store("theme",e.target.value);applyTheme()}});
 setInterval(function(){if(S.tab!=="home")return;var ps=prayerState(),c=document.getElementById("cd");if(!c){return}
   c.textContent=cdStr(ps.info.left);if(ps.info.left<=0.0003||fbNow(ps)!==S.fbs)render()},1000);
