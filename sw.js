@@ -1,4 +1,4 @@
-const CACHE = "amal-sathi-v1";
+const CACHE = "amal-sathi-v2";
 const CORE = ["/", "/index.html", "/manifest.json", "/icon-192.png", "/icon-512.png"];
 
 self.addEventListener("install", (e) => {
@@ -32,7 +32,21 @@ self.addEventListener("fetch", (e) => {
     return;
   }
 
-  // Same-origin files and Google Fonts: cache first, update in background
+  // Quran page packs: large and never change, so cache first and no background refresh
+  if (url.origin === location.origin && url.pathname.indexOf("/quran-") === 0) {
+    e.respondWith(
+      caches.match(req).then((hit) => hit || fetch(req).then((res) => {
+        if (res && res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(req, copy));
+        }
+        return res;
+      }))
+    );
+    return;
+  }
+
+  // Other same-origin files and Google Fonts: cache first, refresh in background
   if (url.origin === location.origin || url.host === "fonts.googleapis.com" || url.host === "fonts.gstatic.com") {
     e.respondWith(
       caches.match(req).then((hit) => {
