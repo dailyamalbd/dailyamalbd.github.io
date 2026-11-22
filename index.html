@@ -12,7 +12,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Daily Amol">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f1f5f4;--card:#fff;--ink:#17332b;--mut:#6b7f78;--g:#0f8a5f;--gd:#14352c;--gl:#d3efe4;--or:#f59e0b;--line:#e2eae7;--hero1:#f6e58d;--hero2:#f9c968;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1714;--card:#16231f;--ink:#e6f1ed;--mut:#8aa39a;--g:#2fc08a;--gd:#e6f1ed;--gl:#1f3a31;--line:#243630;--hero1:#3b3a1c;--hero2:#4a3a14}}
@@ -20,7 +20,7 @@
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%}
-body{font-family:"Hind Siliguri",system-ui,sans-serif;background:var(--bg);color:var(--ink);display:flex;justify-content:center}
+body{font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif;background:var(--bg);color:var(--ink);display:flex;justify-content:center}
 #app{width:100%;max-width:520px;height:100%;display:flex;flex-direction:column;background:var(--bg);position:relative}
 main{flex:1;overflow-y:auto;padding-bottom:12px}
 .hero{background:linear-gradient(170deg,var(--hero1),var(--hero2));padding:16px 20px 74px;border-radius:0 0 0 0}
@@ -94,6 +94,11 @@ select,.btn{font-family:inherit;font-size:15px;background:var(--gl);color:var(--
 .cmp #nd b{position:absolute;left:50%;top:-6px;margin-left:-16px;font-size:28px}
 .tap{width:200px;height:200px;border-radius:50%;border:0;background:var(--g);color:#fff;font-family:inherit;margin:18px auto;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer}
 .tap b{font-size:64px;line-height:1}.tap small{font-size:18px;opacity:.85}
+.pr .t,.fbr .mut,.chip,.sum b,.g small,.cd{font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif}
+.pr .t{color:var(--ink);font-size:17px;font-weight:600;letter-spacing:.3px}
+.pr:not(.now) .t{opacity:.9}
+.fbr .mut{color:var(--ink);font-size:16px;font-weight:600;letter-spacing:.3px}
+.chip{font-size:15px;font-weight:600}
 </style>
 </head>
 <body>
