@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>আমল সাথী</title>
+<title>Daily Amol</title>
 <meta name="description" content="নামাজের সময়, আমল ট্র্যাকার, দোয়া ও কিবলা এক অ্যাপে">
 <meta name="theme-color" content="#0f8a5f">
 <link rel="manifest" href="/manifest.json">
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="/icon-192.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="আমল সাথী">
+<meta name="apple-mobile-web-app-title" content="Daily Amol">
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f1f5f4;--card:#fff;--ink:#17332b;--mut:#6b7f78;--g:#0f8a5f;--gd:#14352c;--gl:#d3efe4;--or:#f59e0b;--line:#e2eae7;--hero1:#f6e58d;--hero2:#f9c968;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -342,6 +342,7 @@ var NM=[["الرَّحْمَٰنُ", "আর-রাহমান", "পরম ক
 function names(){
   return back()+'<div class="card" style="margin-top:0"><h3 style="margin:0 0 4px;font-size:20px">☝️ আল্লাহর ৯৯টি নাম</h3><div class="mut">আল-আসমাউল হুসনা: উচ্চারণ ও অর্থসহ</div><div class="mut" style="margin-top:8px;font-size:14px;line-height:1.6">নবী ﷺ বলেছেন, আল্লাহর ৯৯টি নাম আছে; যে এগুলো আয়ত্ত করবে (মুখস্থ করবে, অর্থ বুঝবে ও আমল করবে), সে জান্নাতে প্রবেশ করবে। (সহিহ বুখারি ও সহিহ মুসলিম)</div></div>'+
   NM.map(function(n,i){return '<div class="card" style="display:flex;gap:12px;align-items:center"><div style="min-width:34px;height:34px;border-radius:50%;background:var(--gl);color:var(--g);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">'+bn(i+1)+'</div><div style="flex:1;min-width:0"><div style="font-size:22px;font-weight:700">'+n[1]+'</div><div class="mut" style="margin-top:2px;font-size:15px">'+n[2]+'</div></div><div class="ar" style="font-size:26px;text-align:right;line-height:1.5">'+n[0]+'</div></div>'}).join("")}
+var CREDIT='<div style="text-align:center;margin:26px 20px 12px;padding-top:14px;border-top:1px solid var(--line)"><div class="mut" style="font-size:12px;letter-spacing:.5px">✨ Created by</div><div style="font-size:17px;font-weight:700;color:var(--g);letter-spacing:.4px;margin-top:2px">Arafat Rahman</div></div>';
 function feat(){if(S.sub==="quran")return quranView();if(S.sub==="names")return names();if(S.sub==="qibla")return qibla();if(S.sub==="tasbih")return tasbih();if(S.sub==="ruq")return ruq();
   return '<div class="card" style="margin-top:0"><h3 style="margin:0;font-size:20px">ফিচার্স</h3>'+featGrid()+'</div>'+forbSec(prayerState())}
 function fbWin(ps){var t=ps.t;return [[t.sunrise,t.sunrise+.25,"সূর্যোদয়ের সময়"],[t.dhuhr-.14,t.dhuhr,"ঠিক দুপুর (যাওয়াল)"],[t.sunset-.25,t.sunset,"সূর্যাস্তের সময়"]]}
@@ -527,7 +528,7 @@ function applyTheme(){var t=store("theme")||"auto",r=document.documentElement;if
 var TABS=[["home","🏠","হোম"],["amal","✅","আমল"],["feat","🧰","ফিচার্স"],["dua","🤲","দোয়া"],["more","☰","অন্যান্য"]];
 function render(){
   var m=document.getElementById("main"),sc=m.scrollTop;
-  m.innerHTML=S.tab==="home"?(S.goal?goalView():home()):S.tab==="amal"?amal():S.tab==="dua"?duaTab():S.tab==="feat"?feat():more();
+  m.innerHTML=(S.tab==="home"?(S.goal?goalView():home()):S.tab==="amal"?amal():S.tab==="dua"?duaTab():S.tab==="feat"?feat():more())+((S.tab==="more"||(S.tab==="home"&&!S.goal))?CREDIT:"");
   document.getElementById("nav").innerHTML=TABS.map(function(t){return '<button class="'+(S.tab===t[0]?'on':'')+'" data-tab="'+t[0]+'"><b>'+t[1]+'</b>'+t[2]+'</button>'}).join('');
   m.scrollTop=sc;if(S.tab==="feat"&&S.sub==="quran")qpost()}
 document.addEventListener("click",function(e){
