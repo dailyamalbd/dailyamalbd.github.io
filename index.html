@@ -254,7 +254,7 @@ nav button.on:after{left:0;right:0;bottom:-8px;height:3px;border-radius:0}
 .fx .fr span:last-child{font-weight:700;font-size:3.5cqw;font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif}
 .fx .tip{display:flex;align-items:center;gap:2cqw;margin:1.6cqw 2.4cqw 2.4cqw;background:rgb(220,241,192);border-radius:4cqw;padding:1.4cqw 3cqw;font-size:2.7cqw;line-height:1.45}
 .fx .tip img{width:6cqw;height:auto}
-</style>
+#app.qr #nav{display:none}</style>
 </head>
 <body>
 <div id="app">
@@ -428,7 +428,7 @@ function ruq(){return back()+'<div class="card" style="margin-top:0"><h3 style="
 // ---------- কুরআন পাঠ (এমদাদিয়া লাইব্রেরী, নূরানী হাফেজী) ----------
 var QN=612,QPER=60;
 var QS=[[1,"ফাতিহা",2],[2,"বাকারা",3],[3,"আলে ইমরান",51],[4,"নিসা",78],[5,"মায়িদা",107],[6,"আনআম",129],[7,"আ'রাফ",152],[8,"আনফাল",178],[9,"তাওবা",188],[10,"ইউনুস",209],[11,"হূদ",222],[12,"ইউসুফ",236],[13,"রা'দ",250],[14,"ইবরাহীম",256],[15,"হিজর",262],[16,"নাহল",268],[17,"বনী ইসরাঈল",283],[18,"কাহফ",294],[19,"মারইয়াম",306],[20,"ত্বহা",313],[21,"আম্বিয়া",323],[22,"হজ্জ",332],[23,"মু'মিনূন",343],[24,"নূর",351],[25,"ফুরকান",360],[26,"শু'আরা",367],[27,"নামল",377],[28,"কাসাস",386],[29,"আনকাবূত",397],[30,"রূম",405],[31,"লুকমান",412],[32,"সাজদাহ",416],[33,"আহযাব",419],[34,"সাবা",429],[35,"ফাতির",435],[36,"ইয়াসীন",441],[37,"সাফফাত",446],[38,"সোয়াদ",453],[39,"যুমার",459],[40,"গাফির (মু'মিন)",468],[41,"ফুসসিলাত (হা-মীম সাজদাহ)",478],[42,"শূরা",484],[43,"যুখরুফ",490],[44,"দুখান",496],[45,"জাসিয়া",499],[46,"আহকাফ",503],[47,"মুহাম্মাদ",507],[48,"ফাতহ",512],[49,"হুজুরাত",516],[50,"কাফ",519],[51,"যারিয়াত",521],[52,"তূর",524],[53,"নাজম",527],[54,"কামার",529],[55,"আর-রাহমান",532],[56,"ওয়াকিয়া",535],[57,"হাদীদ",538],[58,"মুজাদালা",543],[59,"হাশর",546],[60,"মুমতাহিনা",550],[61,"সাফ",552],[62,"জুমুআ",554],[63,"মুনাফিকূন",555],[64,"তাগাবুন",557],[65,"তালাক",559],[66,"তাহরীম",561],[67,"মুলক",563],[68,"কলম",565],[69,"হাক্কাহ",568],[70,"মাআরিজ",570],[71,"নূহ",572],[72,"জিন",574],[73,"মুয্যাম্মিল",577],[74,"মুদ্দাসসির",579],[75,"কিয়ামাহ",581],[76,"ইনসান (দাহর)",583],[77,"মুরসালাত",585],[78,"নাবা",587],[79,"নাযিআত",588],[80,"আবাসা",590],[81,"তাকভীর",591],[82,"ইনফিতার",592],[83,"মুতাফফিফীন",593],[84,"ইনশিকাক",595],[85,"বুরূজ",596],[86,"তারিক",597],[87,"আ'লা",598],[88,"গাশিয়াহ",598],[89,"ফাজর",599],[90,"বালাদ",601],[91,"শামস",601],[92,"লাইল",602],[93,"দুহা",603],[94,"ইনশিরাহ",603],[95,"তীন",604],[96,"আলাক",604],[97,"কদর",605],[98,"বায়্যিনাহ",605],[99,"যিলযাল",606],[100,"আদিয়াত",606],[101,"কারিআহ",607],[102,"তাকাসুর",607],[103,"আসর",608],[104,"হুমাযাহ",608],[105,"ফীল",608],[106,"কুরাইশ",609],[107,"মাউন",609],[108,"কাউসার",609],[109,"কাফিরূন",609],[110,"নাসর",610],[111,"লাহাব",610],[112,"ইখলাস",610],[113,"ফালাক",611],[114,"নাস",611],[0,"দোয়া খতমুল কুরআন",612]];
-var Q={packs:{},wait:{},zoom:0};
+var Q={packs:{},wait:{},zoom:0,read:false};
 function qen(s){return String(s).replace(/[০-৯]/g,function(c){return "০১২৩৪৫৬৭৮৯".indexOf(c)})}
 var QPS=[3,23,43,63,83,103,123,143,163,183,203,223,243,263,283,303,323,343,363,383,403,423,443,463,483,503,523,543,563,587];
 function qparah(p){var r=1;QPS.forEach(function(x,i){if(p>=x)r=i+1});return r}
@@ -443,6 +443,7 @@ function qpack(k){
     Q.packs[k]=u;delete Q.wait[k];return u}).catch(function(e){delete Q.wait[k];throw e});
   return Q.wait[k]}
 var QH=6,QRATIO="929/1497";
+function qsw(){return Q.read&&store("qmode")!=="scroll"}
 function qmain(){return document.getElementById("main")}
 function qstep(){var w=document.getElementById("qwrap");if(!w||!w.firstChild)return 0;return w.firstChild.getBoundingClientRect().height+QH}
 function qbarh(){var b=document.getElementById("qbar");return b?b.offsetHeight:0}
@@ -451,7 +452,7 @@ function qbmui(){
   var w=document.getElementById("qwrap"),b=qbm(),p=qcur(),i,el,mk;
   if(w){Array.prototype.forEach.call(w.querySelectorAll(".qmk"),function(x){x.remove()});
     if(b&&w.children[b-1]){mk=document.createElement("span");mk.className="qmk";mk.setAttribute("style","position:absolute;top:0;right:16px;width:26px;height:42px;background:#d93025;clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%);z-index:2");w.children[b-1].appendChild(mk)}}
-  el=document.getElementById("qbm");if(el){var on=b===p;el.style.background=on?"var(--g)":"";el.style.color=on?"#fff":"";el.textContent=on?"🔖 চিহ্ন সরান":"🔖 চিহ্ন দিন"}
+  el=document.getElementById("qbm");if(el){var on=b===p;if(!Q.read){el.style.background=on?"var(--g)":"";el.style.color=on?"#fff":""}el.textContent=Q.read?(on?"🔖 ✓":"🔖"):(on?"🔖 চিহ্ন সরান":"🔖 চিহ্ন দিন")}
   el=document.getElementById("qbg");if(el){el.style.display=b?"":"none";el.textContent="📌 পৃষ্ঠা "+bn(b)+"-এ যান"}}
 function qsync(p){
   store("qpage",p);
@@ -462,6 +463,7 @@ function qsync(p){
 function qscroll(p){
   var m=qmain(),w=document.getElementById("qwrap");if(!m||!w)return;
   var el=w.children[p-1];if(!el)return;
+  if(qsw()){el.scrollIntoView({inline:"center",block:"nearest",behavior:"instant"});return}
   m.scrollTop+=Math.round(el.getBoundingClientRect().top-m.getBoundingClientRect().top-qbarh())}
 function qwhich(){
   var m=qmain(),w=document.getElementById("qwrap"),st=qstep();if(!m||!w||!st)return 0;
@@ -474,9 +476,17 @@ function qonscroll(){
 function qload(el){
   var p=parseInt(el.dataset.p,10),k=Math.floor((p-1)/QPER),i=(p-1)%QPER,im=el.firstChild,st=document.getElementById("qst");
   qpack(k).then(function(u){if(el.dataset.on==="1"){im.src=u[i];if(st)st.textContent=""}}).catch(function(){if(st)st.textContent="পৃষ্ঠা লোড হয়নি। ইন্টারনেট চালু করে আবার চেষ্টা করুন। একবার খোলা পৃষ্ঠা অফলাইনেও খোলে।"})}
+var qio2=null;
 function qpost(){
   var w=document.getElementById("qwrap"),m=qmain();if(!w||!m)return;
-  if(qio)qio.disconnect();
+  if(qio)qio.disconnect();if(qio2)qio2.disconnect();
+  if(qsw()){
+    qio=new IntersectionObserver(function(es){es.forEach(function(e){var el=e.target;
+      if(e.isIntersecting){if(el.dataset.on!=="1"){el.dataset.on="1";qload(el)}}
+      else if(el.dataset.on==="1"){el.dataset.on="0";el.querySelector("img").removeAttribute("src")}})},{root:w,rootMargin:"0px 150% 0px 150%"});
+    qio2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=.6){var p=parseInt(e.target.dataset.p,10);if(p!==qcur())qsync(p)}})},{root:w,threshold:[.6]});
+    Array.prototype.forEach.call(w.children,function(el){qio.observe(el);qio2.observe(el)});
+    m.onscroll=null;qbmui();qscroll(qcur());return}
   qio=new IntersectionObserver(function(es){es.forEach(function(e){
     var el=e.target;
     if(e.isIntersecting){if(el.dataset.on!=="1"){el.dataset.on="1";qload(el)}}
@@ -485,8 +495,11 @@ function qpost(){
   m.onscroll=qonscroll;
   qbmui();
   qscroll(qcur())}
-function qgo(p){p=Math.max(1,Math.min(QN,p));if(!document.getElementById("qwrap")){store("qpage",p);render();return}qsync(p);qscroll(p)}
+function qgo(p){p=Math.max(1,Math.min(QN,p));if(!document.getElementById("qwrap")){store("qpage",p);Q.read=true;render();return}qsync(p);qscroll(p)}
 function qact(a){
+  if(a==="mode"){store("qmode",qsw()?"scroll":"swipe");render();return}
+  if(a==="read"){Q.read=true;render();return}
+  if(a==="menu"){Q.read=false;render();qmain().scrollTop=0;return}
   if(a==="bm"){var c=qcur();store("qbm",qbm()===c?0:c);qbmui();return}
   if(a==="bmgo"){if(qbm())qgo(qbm());return}
   if(a==="zoom"){Q.zoom=(Q.zoom+1)%3;render();return}
@@ -503,19 +516,25 @@ function qact(a){
     step()}}
 function quranView(){
   var p=qcur(),pr=qparah(p),sr=qsurah(p),z=[100,160,230][Q.zoom];
+  var pg="",n;for(n=1;n<=QN;n++)pg+='<div data-p="'+n+'" style="width:'+z+'%;aspect-ratio:'+QRATIO+';margin:0 0 '+QH+'px;background:#fff;position:relative"><img alt="কুরআনের পৃষ্ঠা '+bn(n)+'" draggable="false" style="display:block;width:100%;height:100%;object-fit:contain"></div>';
+  var sw=qsw();
+  if(sw){pg="";for(n=1;n<=QN;n++)pg+='<div data-p="'+n+'" style="flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;position:relative"><img alt="কুরআনের পৃষ্ঠা '+bn(n)+'" draggable="false" style="width:100%;aspect-ratio:'+QRATIO+';max-height:100%;object-fit:contain;background:#fff;display:block"></div>'}
+  if(Q.read){
+    var fb='style="pointer-events:auto;background:rgba(6,40,28,.9);color:#fff;border:1px solid rgba(255,210,31,.6);border-radius:18px;padding:7px 12px;font-family:inherit;font-size:14px;cursor:pointer"';
+    return '<div id="qfl" style="position:fixed;bottom:10px;left:8px;right:8px;z-index:30;display:flex;gap:6px;align-items:center;pointer-events:none"><button '+fb+' data-qa="menu">☰ মেনু</button><button id="qbm" '+fb+' data-qa="bm">🔖</button><button '+fb+' data-qa="mode">'+(sw?"↕ স্ক্রল":"↔ পাতা")+'</button>'+(sw?"":'<button '+fb+' data-qa="zoom">🔍 '+bn(z)+'%</button>')+'<span id="qpn" style="margin-left:auto;background:rgba(6,40,28,.9);color:#fff;border-radius:18px;padding:7px 12px;font-size:13px">পৃষ্ঠা '+bn(p)+' / '+bn(QN)+'</span></div>'+
+    '<div id="qst" style="position:fixed;top:56px;left:0;right:0;z-index:31;color:#fff;text-align:center;font-size:14px;padding:0 20px"></div>'+(sw?'<div id="qwrap" style="position:fixed;inset:0;z-index:20;display:flex;direction:rtl;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;background:#06281c;-webkit-overflow-scrolling:touch">'+pg+'</div>':'<div id="qst2"></div><div id="qwrap" style="overflow-x:auto;margin:0;border-radius:0">'+pg+'</div><div style="height:50vh"></div>')}
   var po="",i;for(i=1;i<=30;i++)po+='<option value="'+QPS[i-1]+'"'+(i===pr?" selected":"")+'>পারা '+bn(i)+'</option>';
   var so=QS.map(function(s,j){return '<option value="'+j+'"'+(s[0]===sr[0]?" selected":"")+'>'+(s[0]>0?bn(s[0])+'. ':'')+s[1]+'</option>'}).join("");
-  var inp='width:64px;font-family:inherit;font-size:16px;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-align:center';
-  var pg="",n;for(n=1;n<=QN;n++)pg+='<div data-p="'+n+'" style="width:'+z+'%;aspect-ratio:'+QRATIO+';margin:0 0 '+QH+'px;background:#fff;position:relative"><img alt="কুরআনের পৃষ্ঠা '+bn(n)+'" draggable="false" style="display:block;width:100%;height:100%;object-fit:contain"></div>';
-  return back()+'<div class="card" style="margin-top:0;padding-bottom:12px"><h3 style="margin:0 0 2px;font-size:20px">কুরআন শরীফ</h3><div class="mut">নূরানী হাফেজী, এমদাদিয়া লাইব্রেরী · নিচে স্ক্রল করলেই পরের পৃষ্ঠা</div></div>'+
-  '<div id="qbar" style="position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 16px 8px;border-bottom:1px solid var(--line)">'+
-  '<div style="display:flex;gap:8px"><select id="qsur" style="flex:3;min-width:0">'+so+'</select><select id="qpar" style="flex:2;min-width:0">'+po+'</select></div>'+
-  '<div style="display:flex;gap:8px;align-items:center;margin-top:8px"><input id="qnum" inputmode="numeric" aria-label="পৃষ্ঠা নম্বর" value="'+bn(p)+'" style="'+inp+'"><button class="btn" data-qa="go">যান</button><button class="btn" data-qa="zoom">🔍 '+bn(z)+'%</button><span id="qpn" class="mut" style="flex:1;text-align:right;font-size:13px">পৃষ্ঠা '+bn(p)+' / '+bn(QN)+'</span></div>'+
-  '<div style="display:flex;gap:8px;align-items:center;margin-top:8px"><span class="mut" style="font-size:14px">পারা</span><input id="qjp" inputmode="numeric" aria-label="পারা নম্বর" placeholder="২৫" style="'+inp+'"><span class="mut" style="font-size:14px">এর পৃষ্ঠা</span><input id="qjn" inputmode="numeric" aria-label="পারার ভেতরের পৃষ্ঠা" placeholder="৫" style="'+inp+'"><button class="btn" data-qa="gop">যান</button></div>'+
-  '<div style="display:flex;gap:8px;margin-top:8px"><button class="btn" id="qbm" data-qa="bm" style="flex:1">🔖 চিহ্ন দিন</button><button class="btn" id="qbg" data-qa="bmgo" style="flex:1;display:none">📌 যান</button></div></div>'+
-  '<div id="qst" class="mut" style="margin:6px 20px;text-align:center"></div>'+
-  '<div id="qwrap" style="overflow-x:auto;margin:8px 8px 0;border-radius:10px">'+pg+'</div>'+
-  '<div class="card"><button class="btn" data-qa="dl" style="width:100%">অফলাইনের জন্য সব পৃষ্ঠা ফোনে সেভ করুন</button><div id="qdl" class="mut" style="margin-top:8px;text-align:center;font-size:14px">'+(store("qoff")?"আগে একবার সেভ করা হয়েছে।":"প্রায় "+bn(Math.round(QN*0.04))+" MB ডেটা লাগবে। Wi-Fi-তে করা ভালো।")+'</div></div><div style="height:50vh"></div>'}
+  var inp='width:64px;font-family:inherit;font-size:16px;padding:8px;border-radius:10px;border:1px solid var(--line);background:#fff;color:#143d22;text-align:center';
+  var b=qbm();
+  return back()+'<div class="card" style="margin-top:0;padding-bottom:12px"><h3 style="margin:0 0 2px;font-size:20px">কুরআন শরীফ</h3><div class="mut">নূরানী হাফেজী, এমদাদিয়া লাইব্রেরী · কোথা থেকে পড়বেন বেছে নিন</div></div>'+
+  '<div class="card" id="qbar"><button class="go" data-qa="read" style="border:0;width:100%;font-family:inherit;cursor:pointer;font-size:18px">📖 পড়া শুরু করুন (পৃষ্ঠা '+bn(p)+')</button>'+
+  (b?'<button class="btn" data-qa="bmgo" style="width:100%;margin-top:10px">📌 চিহ্ন দেওয়া পৃষ্ঠা '+bn(b)+'-এ যান</button>':'')+'</div>'+
+  '<div class="card"><div class="mut" style="margin-bottom:8px">সূরা বা পারা বেছে নিন</div><div style="display:flex;gap:8px"><select id="qsur" style="flex:3;min-width:0">'+so+'</select><select id="qpar" style="flex:2;min-width:0">'+po+'</select></div>'+
+  '<div class="mut" style="margin:14px 0 8px">পৃষ্ঠা নম্বর দিয়ে</div><div style="display:flex;gap:8px;align-items:center"><input id="qnum" inputmode="numeric" aria-label="পৃষ্ঠা নম্বর" value="'+bn(p)+'" style="'+inp+'"><button class="btn" data-qa="go">যান</button><span class="mut" style="flex:1;text-align:right;font-size:13px">মোট '+bn(QN)+' পৃষ্ঠা</span></div>'+
+  '<div class="mut" style="margin:14px 0 8px">পারা ও পারার ভেতরের পৃষ্ঠা দিয়ে</div><div style="display:flex;gap:8px;align-items:center"><span class="mut" style="font-size:14px">পারা</span><input id="qjp" inputmode="numeric" aria-label="পারা নম্বর" placeholder="২৫" style="'+inp+'"><span class="mut" style="font-size:14px">এর পৃষ্ঠা</span><input id="qjn" inputmode="numeric" aria-label="পারার ভেতরের পৃষ্ঠা" placeholder="৫" style="'+inp+'"><button class="btn" data-qa="gop">যান</button></div>'+
+  '<div id="qst" class="mut" style="margin-top:10px;text-align:center"></div></div>'+
+  '<div class="card"><button class="btn" data-qa="dl" style="width:100%">অফলাইনের জন্য সব পৃষ্ঠা ফোনে সেভ করুন</button><div id="qdl" class="mut" style="margin-top:8px;text-align:center;font-size:14px">'+(store("qoff")?"আগে একবার সেভ করা হয়েছে।":"প্রায় "+bn(Math.round(QN*0.04))+" MB ডেটা লাগবে। Wi-Fi-তে করা ভালো।")+'</div></div><div style="height:12px"></div>'}
 var NM=[["الرَّحْمَٰنُ", "আর-রাহমান", "পরম করুণাময়"], ["الرَّحِيمُ", "আর-রাহীম", "অতি দয়ালু"], ["الْمَلِكُ", "আল-মালিক", "সর্বময় কর্তৃত্বের অধিকারী, বাদশাহ"], ["الْقُدُّوسُ", "আল-কুদ্দূস", "অতি পবিত্র"], ["السَّلَامُ", "আস-সালাম", "শান্তিদাতা, সকল ত্রুটি থেকে মুক্ত"], ["الْمُؤْمِنُ", "আল-মুমিন", "নিরাপত্তাদাতা"], ["الْمُهَيْمِنُ", "আল-মুহাইমিন", "রক্ষণাবেক্ষণকারী"], ["الْعَزِيزُ", "আল-আযীয", "মহাপরাক্রমশালী"], ["الْجَبَّارُ", "আল-জাব্বার", "মহাপ্রতাপশালী"], ["الْمُتَكَبِّرُ", "আল-মুতাকাব্বির", "মহামহিম"], ["الْخَالِقُ", "আল-খালিক", "সৃষ্টিকর্তা"], ["الْبَارِئُ", "আল-বারি", "উদ্ভাবনকারী"], ["الْمُصَوِّرُ", "আল-মুসাওয়ির", "আকৃতিদানকারী"], ["الْغَفَّارُ", "আল-গাফফার", "পরম ক্ষমাশীল"], ["الْقَهَّارُ", "আল-কাহহার", "সবকিছুর ওপর পরাক্রমশালী"], ["الْوَهَّابُ", "আল-ওয়াহহাব", "মহান দাতা"], ["الرَّزَّاقُ", "আর-রাযযাক", "রিযিকদাতা"], ["الْفَتَّاحُ", "আল-ফাত্তাহ", "উন্মুক্তকারী, বিজয়দাতা"], ["الْعَلِيمُ", "আল-আলীম", "সর্বজ্ঞ"], ["الْقَابِضُ", "আল-কাবিদ", "সংকুচিতকারী"], ["الْبَاسِطُ", "আল-বাসিত", "প্রসারকারী"], ["الْخَافِضُ", "আল-খাফিদ", "অবনতকারী"], ["الرَّافِعُ", "আর-রাফি", "উন্নতকারী"], ["الْمُعِزُّ", "আল-মুইযয", "সম্মানদাতা"], ["الْمُذِلُّ", "আল-মুযিল্ল", "অপমানকারী"], ["السَّمِيعُ", "আস-সামী", "সর্বশ্রোতা"], ["الْبَصِيرُ", "আল-বাসীর", "সর্বদ্রষ্টা"], ["الْحَكَمُ", "আল-হাকাম", "চূড়ান্ত মীমাংসাকারী"], ["الْعَدْلُ", "আল-আদল", "ন্যায়বিচারক"], ["اللَّطِيفُ", "আল-লাতীফ", "সূক্ষ্মদর্শী, অতি দয়ালু"], ["الْخَبِيرُ", "আল-খাবীর", "সর্ববিষয়ে অবগত"], ["الْحَلِيمُ", "আল-হালীম", "পরম সহনশীল"], ["الْعَظِيمُ", "আল-আযীম", "মহান"], ["الْغَفُورُ", "আল-গাফূর", "অতি ক্ষমাশীল"], ["الشَّكُورُ", "আশ-শাকূর", "গুণগ্রাহী, কৃতজ্ঞতার মর্যাদাদাতা"], ["الْعَلِيُّ", "আল-আলী", "সমুন্নত"], ["الْكَبِيرُ", "আল-কাবীর", "সর্বশ্রেষ্ঠ, মহাবিশাল"], ["الْحَفِيظُ", "আল-হাফীয", "মহারক্ষক"], ["الْمُقِيتُ", "আল-মুকীত", "জীবিকা ও শক্তির ব্যবস্থাকারী"], ["الْحَسِيبُ", "আল-হাসীব", "হিসাব গ্রহণকারী, যথেষ্টকারী"], ["الْجَلِيلُ", "আল-জালীল", "মহিমান্বিত"], ["الْكَرِيمُ", "আল-কারীম", "মহানুভব"], ["الرَّقِيبُ", "আর-রাকীব", "তত্ত্বাবধায়ক, সতর্ক পর্যবেক্ষক"], ["الْمُجِيبُ", "আল-মুজীব", "দুআ কবুলকারী"], ["الْوَاسِعُ", "আল-ওয়াসি", "সুপ্রশস্ত, সর্বব্যাপী"], ["الْحَكِيمُ", "আল-হাকীম", "প্রজ্ঞাময়"], ["الْوَدُودُ", "আল-ওয়াদূদ", "অতি স্নেহময়, প্রেমময়"], ["الْمَجِيدُ", "আল-মাজীদ", "গৌরবময়"], ["الْبَاعِثُ", "আল-বাইস", "পুনরুত্থানকারী"], ["الشَّهِيدُ", "আশ-শাহীদ", "সর্বদ্রষ্টা সাক্ষী"], ["الْحَقُّ", "আল-হাক্ক", "চিরসত্য"], ["الْوَكِيلُ", "আল-ওয়াকীল", "কর্মবিধায়ক"], ["الْقَوِيُّ", "আল-কাবিয়্যু", "মহাশক্তিমান"], ["الْمَتِينُ", "আল-মাতীন", "সুদৃঢ়"], ["الْوَلِيُّ", "আল-ওয়ালিয়্যু", "অভিভাবক, বন্ধু"], ["الْحَمِيدُ", "আল-হামীদ", "প্রশংসিত"], ["الْمُحْصِي", "আল-মুহসী", "সবকিছুর হিসাবরক্ষক"], ["الْمُبْدِئُ", "আল-মুবদি", "প্রথমবার সৃষ্টিকারী"], ["الْمُعِيدُ", "আল-মুঈদ", "পুনরায় সৃষ্টিকারী"], ["الْمُحْيِي", "আল-মুহয়ী", "জীবনদাতা"], ["الْمُمِيتُ", "আল-মুমীত", "মৃত্যুদাতা"], ["الْحَيُّ", "আল-হায়্যু", "চিরঞ্জীব"], ["الْقَيُّومُ", "আল-কাইয়ূম", "চিরস্থায়ী, সবকিছুর ধারক"], ["الْوَاجِدُ", "আল-ওয়াজিদ", "সর্বপ্রাপ্ত, অভাবমুক্ত"], ["الْمَاجِدُ", "আল-মাজিদ", "মহা সম্মানিত"], ["الْوَاحِدُ", "আল-ওয়াহিদ", "এক, অদ্বিতীয়"], ["الْأَحَدُ", "আল-আহাদ", "একক"], ["الصَّمَدُ", "আস-সামাদ", "অমুখাপেক্ষী"], ["الْقَادِرُ", "আল-কাদির", "সর্বশক্তিমান"], ["الْمُقْتَدِرُ", "আল-মুক্তাদির", "পূর্ণ ক্ষমতাবান"], ["الْمُقَدِّمُ", "আল-মুকাদ্দিম", "অগ্রবর্তীকারী"], ["الْمُؤَخِّرُ", "আল-মুআখখির", "পশ্চাদবর্তীকারী"], ["الْأَوَّلُ", "আল-আউয়াল", "অনাদি, সবকিছুর পূর্বে"], ["الْآخِرُ", "আল-আখির", "অনন্ত, সবকিছুর পরে"], ["الظَّاهِرُ", "আয-যাহির", "প্রকাশ্য"], ["الْبَاطِنُ", "আল-বাতিন", "অপ্রকাশ্য, গোপন"], ["الْوَالِي", "আল-ওয়ালী", "অধিপতি, পরিচালক"], ["الْمُتَعَالِي", "আল-মুতাআলী", "সর্বোচ্চ মর্যাদাবান"], ["الْبَرُّ", "আল-বার্র", "মহা উপকারী, সদাচারী"], ["التَّوَّابُ", "আত-তাওয়াব", "তাওবা কবুলকারী"], ["الْمُنْتَقِمُ", "আল-মুনতাকিম", "ন্যায্য প্রতিশোধ গ্রহণকারী"], ["الْعَفُوُّ", "আল-আফুউ", "মার্জনাকারী"], ["الرَّءُوفُ", "আর-রাউফ", "অতি স্নেহশীল"], ["مَالِكُ الْمُلْكِ", "মালিকুল মুলক", "সকল রাজত্বের মালিক"], ["ذُو الْجَلَالِ وَالْإِكْرَامِ", "যুল জালালি ওয়াল ইকরাম", "মহিমা ও সম্মানের অধিকারী"], ["الْمُقْسِطُ", "আল-মুকসিত", "ন্যায়পরায়ণ"], ["الْجَامِعُ", "আল-জামি", "একত্রকারী"], ["الْغَنِيُّ", "আল-গানিয়্যু", "অভাবমুক্ত, ধনী"], ["الْمُغْنِي", "আল-মুগনী", "অভাব দূরকারী"], ["الْمَانِعُ", "আল-মানি", "বাধাদানকারী, রক্ষাকারী"], ["الضَّارُّ", "আয-যার্র", "ক্ষতি পৌঁছানোর ক্ষমতার মালিক"], ["النَّافِعُ", "আন-নাফি", "উপকার দানকারী"], ["النُّورُ", "আন-নূর", "জ্যোতি, আলো"], ["الْهَادِي", "আল-হাদী", "পথপ্রদর্শক"], ["الْبَدِيعُ", "আল-বাদী", "অনুপম সৃষ্টিকর্তা"], ["الْبَاقِي", "আল-বাকী", "চিরস্থায়ী"], ["الْوَارِثُ", "আল-ওয়ারিস", "চূড়ান্ত উত্তরাধিকারী"], ["الرَّشِيدُ", "আর-রাশীদ", "সঠিক পথপ্রদর্শক"], ["الصَّبُورُ", "আস-সবূর", "পরম ধৈর্যশীল"]];
 function names(){
   return back()+'<div class="card" style="margin-top:0"><h3 style="margin:0 0 4px;font-size:20px">☝️ আল্লাহর ৯৯টি নাম</h3><div class="mut">আল-আসমাউল হুসনা: উচ্চারণ ও অর্থসহ</div><div class="mut" style="margin-top:8px;font-size:14px;line-height:1.6">নবী ﷺ বলেছেন, আল্লাহর ৯৯টি নাম আছে; যে এগুলো আয়ত্ত করবে (মুখস্থ করবে, অর্থ বুঝবে ও আমল করবে), সে জান্নাতে প্রবেশ করবে। (সহিহ বুখারি ও সহিহ মুসলিম)</div></div>'+
@@ -713,6 +732,7 @@ function applyTheme(){var t=store("theme")||"auto",r=document.documentElement;if
 var TABS=[["home","🏠","হোম"],["amal","✅","আমল"],["feat","🧰","ফিচার্স"],["dua","🤲","দোয়া"],["more","☰","অন্যান্য"]];
 function render(){
   var m=document.getElementById("main"),sc=m.scrollTop;
+  if(!(S.tab==="feat"&&S.sub==="quran"))Q.read=false;document.getElementById("app").classList.toggle("qr",!!Q.read);
   m.innerHTML=(S.tab==="home"?(S.goal?goalView():home()):S.tab==="amal"?amal():S.tab==="dua"?duaTab():S.tab==="feat"?feat():more())+((S.tab==="more"||(S.tab==="home"&&!S.goal))?CREDIT:"");
   document.getElementById("nav").innerHTML=TABS.map(function(t){var on=S.tab===t[0],ic={home:["nav_home_w","nav_home_g"],amal:["nav_check_w","nav_check_g"],more:["nav_menu_w","nav_menu_g"],feat:["nav_mosque","nav_mosque"],dua:["nav_hands","nav_hands"]}[t[0]];return '<button class="'+(on?'on':'')+'" data-tab="'+t[0]+'"><img src="'+ART[ic[on?1:0]]+'" alt="">'+t[2]+'</button>'}).join('');
   m.scrollTop=sc;if(S.tab==="feat"&&S.sub==="quran")qpost()}
