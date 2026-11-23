@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Daily Amol</title>
 <meta name="description" content="নামাজের সময়, আমল ট্র্যাকার, দোয়া ও কিবলা এক অ্যাপে">
-<meta name="theme-color" content="#0f8a5f">
+<meta name="theme-color" content="#06281c">
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/icon-192.png">
@@ -99,6 +99,82 @@ select,.btn{font-family:inherit;font-size:15px;background:var(--gl);color:var(--
 .pr:not(.now) .t{opacity:.9}
 .fbr .mut{color:var(--ink);font-size:16px;font-weight:600;letter-spacing:.3px}
 .chip{font-size:15px;font-weight:600}
+
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"],:root[data-theme="light"]{--bg:#052a1d;--card:#fbf7ea;--ink:#16332b;--mut:#66786f;--g:#0e7a55;--gd:#16332b;--gl:#e2eedc;--or:#f59e0b;--line:#e9e2cc;--gold:#e9b949;--gold2:#f6dc8e;color-scheme:light}
+body{background:#031c14}
+#app{background:radial-gradient(130% 55% at 50% 0%,#0e4f37 0%,#073522 50%,#04261a 100%)}
+.card{margin:12px 14px;border-radius:20px}
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 4px}
+.hdr .ib{width:42px;height:42px;border-radius:12px;background:none;border:0;color:#f6e9bf;font-size:24px;display:grid;place-items:center;cursor:pointer;padding:0}
+.hdr .lg{display:flex;align-items:center;gap:10px}
+.hdr .lg img{width:52px;height:52px;border-radius:50%;border:2px solid var(--gold);background:#0b3b2a;box-shadow:0 0 12px rgba(233,185,73,.4)}
+.hdr .tt{font-size:30px;font-weight:700;line-height:1.05;font-family:system-ui,"Noto Sans",sans-serif;background:linear-gradient(180deg,#fff0b4,#dfa42a);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.3px}
+.hdr small{display:block;font-size:12px;color:#d9e8df}
+.scene{position:relative;height:230px;margin-top:4px;overflow:hidden}
+.scene svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.qt{position:absolute;left:16px;top:26px;width:52%;color:#fff}
+.qt b{display:block;font-size:44px;line-height:.7;color:var(--gold);font-family:Georgia,serif}
+.qt p{margin:6px 0 4px;font-size:17px;font-weight:500;line-height:1.5;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.qt i{font-style:normal;font-size:12px;color:var(--gold2);border-top:1px solid rgba(233,185,73,.7);padding-top:4px;display:inline-block}
+.arch{position:relative;margin:-56px 30px 0;padding:22px 12px 14px;text-align:center;border:2px solid var(--gold);border-radius:130px 130px 22px 22px/100px 100px 22px 22px;background:linear-gradient(180deg,#0b4b32,#063622);box-shadow:0 0 24px rgba(233,185,73,.35),inset 0 0 24px rgba(0,0,0,.35);color:#fff}
+.arch .mi{font-size:30px;line-height:1;filter:drop-shadow(0 0 6px rgba(233,185,73,.6))}
+.arch .an{font-size:30px;font-weight:700;line-height:1.3;margin-top:4px}
+.arch .as{font-size:20px;font-weight:700;color:#f0c85a;margin-top:-2px}
+.arch .cd{font-size:52px;font-weight:700;color:#fff;letter-spacing:1px;font-variant-numeric:tabular-nums;font-family:system-ui,"Noto Sans",sans-serif;line-height:1.1;margin:4px 0 10px;text-shadow:0 0 16px rgba(255,255,255,.25)}
+.hms{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.hms span{border:1px solid rgba(233,185,73,.7);border-radius:99px;padding:3px 12px;font-size:13px;color:#f6e7b4;background:rgba(0,0,0,.18)}
+.chips{margin:14px 14px 0}
+.chip,.sel-city{background:rgba(255,255,255,.1);color:#eaf3ee;border:1px solid rgba(233,185,73,.35)}
+.sel-city option{color:#16332b}
+.dstrip{margin:14px 14px 0;border:1.5px solid rgba(233,185,73,.75);border-radius:18px;background:rgba(3,40,26,.85);display:flex;align-items:center;padding:10px 6px}
+.dstrip .dc{flex:1;display:flex;gap:10px;align-items:center;padding:0 8px;min-width:0}
+.dstrip i{font-style:normal;font-size:22px;width:42px;height:42px;border:1.5px solid rgba(233,185,73,.8);border-radius:12px;display:grid;place-items:center;flex:none;background:rgba(233,185,73,.1)}
+.dstrip b{display:block;font-size:17px;color:#fff;line-height:1.3}
+.dstrip small{display:block;font-size:12.5px;color:var(--gold2);line-height:1.35}
+.dstrip .dv{width:1.5px;align-self:stretch;background:rgba(233,185,73,.7)}
+.sheet{margin:14px;border-radius:20px;padding:6px 0;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.pr{padding:10px 14px;gap:12px;border-bottom:1px solid var(--line)}
+.pr:last-child{border-bottom:0}
+.pr .pi{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#fff,#f1e6c2);display:grid;place-items:center;font-size:24px;flex:none;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.pr .n{flex:1;font-size:21px;font-weight:700;color:var(--ink)}
+.pr:not(.now) .n{color:var(--ink)}
+.pr .t,.pr.now .t{color:var(--ink);font-size:17px;font-weight:600}
+.pr.now{background:linear-gradient(90deg,#dff0b6,#c3e5a0);border-radius:14px;margin:0 6px;padding:10px 8px}
+.ck{width:46px;height:32px;border-radius:99px;background:#eef0e8;border:1.5px solid #d4d9cc}
+.ck.on{background:linear-gradient(180deg,#127a52,#0a5a3b);border-color:#0a5a3b}
+.prog{margin:14px;border:1.5px solid var(--gold);border-radius:22px;background:linear-gradient(180deg,#0b4b32,#063622);display:flex;align-items:center;gap:12px;padding:14px;color:#fff;flex-wrap:wrap;box-shadow:0 0 18px rgba(233,185,73,.25)}
+.prog .pg{position:relative;width:96px;height:96px;flex:none}
+.prog .pg svg{position:absolute;inset:0;width:100%;height:100%}
+.prog .pc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}
+.prog .pc span{font-size:22px}.prog .pc b{font-size:18px}
+.prog .pt{flex:1;min-width:150px}
+.prog .p1{font-size:20px;font-weight:700}
+.prog .p2{font-size:24px;font-weight:700;color:#f0c85a;line-height:1.3}
+.prog .p3{font-size:13px;color:#d9e8df}
+.prog .gb{flex:1 1 100%;background:linear-gradient(180deg,#f8e08c,#e0a92f);color:#3a2a05;border:0;border-radius:99px;padding:12px;font-family:inherit;font-size:17px;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.sd{border:0;background:linear-gradient(90deg,#f6e19a,#e5b240);color:#3a2a05;border-radius:18px;margin:14px;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.sd .mut{color:#5a4410}
+nav{background:linear-gradient(180deg,#06301f,#03190f);border-top:1.5px solid rgba(233,185,73,.6)}
+nav button{color:#d7e6dc}
+nav button b{padding:2px 10px;background:none;border-radius:0}
+nav button.on{color:var(--gold2)}
+nav button.on b{background:none;filter:drop-shadow(0 0 6px rgba(233,185,73,.8))}
+nav button.on:after{content:"";position:absolute;left:20%;right:20%;bottom:-8px;height:3px;border-radius:3px;background:var(--gold)}
+nav button{position:relative}
+#qbar .mut,#qst{color:#cfe0d6}
+#qnum{background:#fbf7ea!important;color:#16332b!important}
+.ram{margin:14px;border:1.5px solid var(--gold);border-radius:22px;padding:14px;color:#fff;background:radial-gradient(120% 140% at 100% 0%,#1c6a4a 0%,#0a4a31 45%,#063622 100%);box-shadow:0 0 18px rgba(233,185,73,.3)}
+.ram .rh{display:flex;justify-content:space-between;align-items:center;font-size:20px;font-weight:700;color:#f6dc8e}
+.ram .rh em{font-style:normal;font-size:13px;font-weight:600;color:#3a2a05;background:linear-gradient(180deg,#f8e08c,#e0a92f);border-radius:99px;padding:3px 12px}
+.ram .rg2{display:flex;gap:10px;margin-top:12px}
+.ram .rg2>div{flex:1;text-align:center;background:rgba(0,0,0,.22);border:1px solid rgba(233,185,73,.5);border-radius:16px;padding:10px 6px}
+.ram .rg2 i{font-style:normal;font-size:26px;display:block}
+.ram .rg2 small{display:block;font-size:13px;color:#d9e8df;margin-top:2px}
+.ram .rg2 b{display:block;font-size:22px;color:#fff;margin-top:2px}
+.ram .rl{margin-top:12px;text-align:center;font-size:15px;color:#f6dc8e}
+.ram .rl b{font-family:system-ui,"Noto Sans",sans-serif;font-size:20px;color:#fff;letter-spacing:1px;margin-left:4px}
+.ram .rn{margin-top:8px;text-align:center;font-size:12px;color:#b9cfc3}
+
 </style>
 </head>
 <body>
@@ -151,7 +227,7 @@ function bnDate(y,m,d){var t=m*100+d,idx=-1,k;
   return{day:Math.round((b-a)/864e5)+1,month:BM[o[2]],year:year}}
 function hijri(date){try{var p=new Intl.DateTimeFormat("en-u-ca-islamic-umalqura",{day:"numeric",month:"numeric",year:"numeric",timeZone:"UTC"}).formatToParts(date),r={};
   p.forEach(function(x){r[x.type]=parseInt(x.value,10)});var adj=HA();
-  var dd=r.day+adj,mm=r.month;if(dd<1){dd+=30;mm--}if(dd>30){dd-=30;mm++}return{d:dd,m:HM[(mm+11)%12],y:r.year}}catch(e){return null}}
+  var dd=r.day+adj,mm=r.month;if(dd<1){dd+=30;mm--}if(dd>30){dd-=30;mm++}return{d:dd,m:HM[(mm+11)%12],mn:((mm+11)%12)+1,y:r.year}}catch(e){return null}}
 function HA(){var v=store("hadj");return v===null?-1:v}
 function dnow(){var n=new Date(Date.now()+TZ*36e5);return n}
 function key(dt){return dt.getUTCFullYear()+"-"+pad(dt.getUTCMonth()+1)+"-"+pad(dt.getUTCDate())}
@@ -191,22 +267,34 @@ function prayerState(){
   if(cur>=0)info={name:list[cur].n,left:list[cur].e-nowH,span:list[cur].e-list[cur].s};
   else{var nx=nowH<t.dhuhr?{n:"যোহর",s:t.dhuhr}:{n:"মাগরিব",s:t.maghrib};if(nowH>=t.sunrise&&nowH<t.dhuhr)nx={n:"যোহর",s:t.dhuhr};info={name:nx.n,left:nx.s-nowH,span:3,wait:true}}
   return{t:t,list:list,cur:cur,info:info,fri:fri}}
-function cdStr(h){var s=Math.max(0,Math.round(h*3600));return bn(pad(Math.floor(s/3600))+":"+pad(Math.floor(s%3600/60))+":"+pad(s%60))}
+function cdStr(h){var s=Math.max(0,Math.round(h*3600));return pad(Math.floor(s/3600))+":"+pad(Math.floor(s%3600/60))+":"+pad(s%60)}
 
+function ramInfo(ps){var n=dnow(),x=n.getUTCHours()+n.getUTCMinutes()/60+n.getUTCSeconds()/3600,t=ps.t;
+  if(x<t.fajr)return{l:"সেহরি শেষ হতে বাকি",left:t.fajr-x};
+  if(x<t.maghrib)return{l:"ইফতার হতে বাকি",left:t.maghrib-x};
+  return{l:"পরবর্তী সেহরি শেষ হতে বাকি",left:t.fajr+24-x}}
+function ramCard(ps,h){if(!h||h.mn!==9)return"";var r=ramInfo(ps);
+  return '<div class="ram"><div class="rh"><span>🌙 রমজান মোবারক</span><em>'+bn(h.d)+' রমজান</em></div><div class="rg2"><div><i>🍽️</i><small>সেহরির শেষ সময়</small><b>ভোর '+bn(hm(ps.t.fajr))+'</b></div><div><i>🌇</i><small>ইফতার</small><b>সন্ধ্যা '+bn(hm(ps.t.maghrib))+'</b></div></div><div class="rl">'+r.l+' <b id="rcd">'+cdStr(r.left)+'</b></div><div class="rn">সময়গুলো আনুমানিক। সতর্কতার জন্য সেহরি কয়েক মিনিট আগে শেষ করুন।</div></div>'}
+var HQ=[["জেনে রাখো, আল্লাহর স্মরণেই অন্তর প্রশান্ত হয়।", "সূরা রা'দ ১৩:২৮"], ["নিশ্চয়ই কষ্টের সাথেই স্বস্তি আছে।", "সূরা ইনশিরাহ ৯৪:৬"], ["তোমরা আমাকে স্মরণ করো, আমিও তোমাদের স্মরণ করব।", "সূরা বাকারা ২:১৫২"], ["নিশ্চয়ই আল্লাহ ধৈর্যশীলদের সাথে আছেন।", "সূরা বাকারা ২:১৫৩"], ["যে আল্লাহর ওপর ভরসা করে, তার জন্য তিনিই যথেষ্ট।", "সূরা তালাক ৬৫:৩"], ["তোমরা আল্লাহর রহমত থেকে নিরাশ হয়ো না।", "সূরা যুমার ৩৯:৫৩"], ["আমার রহমত সবকিছুকে পরিব্যাপ্ত করে আছে।", "সূরা আ'রাফ ৭:১৫৬"]];
+var SCENE='<svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#061a2c"/><stop offset=".6" stop-color="#0d3a4a"/><stop offset="1" stop-color="#3a6a55"/></linearGradient><linearGradient id="gd1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f9e8a6"/><stop offset="1" stop-color="#c28a2a"/></linearGradient><radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient><linearGradient id="fd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#06301f" stop-opacity="0"/><stop offset="1" stop-color="#06301f"/></linearGradient><mask id="mm"><rect width="390" height="230" fill="#fff"/><circle cx="351" cy="46" r="20" fill="#000"/></mask></defs><rect width="390" height="230" fill="url(#sk)"/><circle cx="30" cy="22" r="1.1" fill="#fff" opacity="0.50"/><circle cx="70" cy="46" r="1.1" fill="#fff" opacity="0.50"/><circle cx="110" cy="18" r="1.1" fill="#fff" opacity="0.50"/><circle cx="150" cy="40" r="1.1" fill="#fff" opacity="0.50"/><circle cx="190" cy="24" r="1.1" fill="#fff" opacity="0.50"/><circle cx="228" cy="52" r="1.1" fill="#fff" opacity="0.60"/><circle cx="262" cy="20" r="1.6" fill="#fff" opacity="0.50"/><circle cx="300" cy="34" r="1.1" fill="#fff" opacity="0.50"/><circle cx="48" cy="92" r="1.1" fill="#fff" opacity="0.60"/><circle cx="128" cy="84" r="1.1" fill="#fff" opacity="0.70"/><circle cx="212" cy="86" r="1.1" fill="#fff" opacity="0.70"/><circle cx="20" cy="60" r="1.1" fill="#fff" opacity="0.50"/><circle cx="96" cy="64" r="1.1" fill="#fff" opacity="0.90"/><circle cx="176" cy="12" r="1.1" fill="#fff" opacity="0.70"/><circle cx="244" cy="30" r="1.1" fill="#fff" opacity="0.50"/><circle cx="330" cy="18" r="1.6" fill="#fff" opacity="0.50"/><circle cx="372" cy="70" r="1.1" fill="#fff" opacity="0.50"/><circle cx="310" cy="84" r="1.1" fill="#fff" opacity="0.50"/><circle cx="60" cy="20" r="1.1" fill="#fff" opacity="0.50"/><circle cx="142" cy="66" r="1.1" fill="#fff" opacity="0.70"/><circle cx="339" cy="52" r="24" fill="#f7e7b0" mask="url(#mm)"/><ellipse cx="275" cy="175" rx="170" ry="80" fill="url(#gl)"/><g fill="url(#gd1)"><rect x="205" y="140" width="140" height="72"/><path d="M233 140 C233 92 317 92 317 140 Z"/><path d="M206 140 C206 118 238 118 238 140 Z"/><path d="M312 140 C312 118 344 118 344 140 Z"/><rect x="181" y="92" width="11" height="120"/><path d="M179 92 L186.5 74 L194 92 Z"/><circle cx="186.5" cy="71" r="2"/><rect x="163" y="114" width="11" height="98"/><path d="M161 114 L168.5 96 L176 114 Z"/><circle cx="168.5" cy="93" r="2"/><rect x="359" y="92" width="11" height="120"/><path d="M357 92 L364.5 74 L372 92 Z"/><circle cx="364.5" cy="71" r="2"/><rect x="377" y="114" width="11" height="98"/><path d="M375 114 L382.5 96 L390 114 Z"/><circle cx="382.5" cy="93" r="2"/><rect x="272" y="80" width="2" height="14"/><circle cx="273" cy="78" r="2.5"/></g><g fill="#fff0b8" opacity=".95"><path d="M215 200 V176 a5 9 0 0 1 10 0 V200 Z"/><path d="M239 200 V176 a5 9 0 0 1 10 0 V200 Z"/><path d="M287 200 V176 a5 9 0 0 1 10 0 V200 Z"/><path d="M311 200 V176 a5 9 0 0 1 10 0 V200 Z"/><path d="M265 212 V170 a9 14 0 0 1 18 0 V212 Z"/><rect x="185" y="114" width="3" height="9"/><rect x="185" y="138" width="3" height="9"/><rect x="167" y="136" width="3" height="9"/><rect x="167" y="160" width="3" height="9"/><rect x="363" y="114" width="3" height="9"/><rect x="363" y="138" width="3" height="9"/><rect x="381" y="136" width="3" height="9"/><rect x="381" y="160" width="3" height="9"/></g><rect y="208" width="390" height="22" fill="#0a2a1c"/><g transform="translate(18 214) scale(1.25)" fill="#0a2a1c"><path d="M0 -70 L18 -38 H8 L24 -12 H10 L28 18 H-28 L-10 -12 H-24 L-8 -38 H-18 Z"/></g><g transform="translate(52 216) scale(1.00)" fill="#0d3622"><path d="M0 -70 L18 -38 H8 L24 -12 H10 L28 18 H-28 L-10 -12 H-24 L-8 -38 H-18 Z"/></g><g transform="translate(88 214) scale(0.80)" fill="#0a2a1c"><path d="M0 -70 L18 -38 H8 L24 -12 H10 L28 18 H-28 L-10 -12 H-24 L-8 -38 H-18 Z"/></g><g transform="translate(150 214) scale(0.70)" fill="#0c3220"><path d="M0 -70 L18 -38 H8 L24 -12 H10 L28 18 H-28 L-10 -12 H-24 L-8 -38 H-18 Z"/></g><g transform="translate(120 216) scale(0.90)" fill="#0a2a1c"><path d="M0 -70 L18 -38 H8 L24 -12 H10 L28 18 H-28 L-10 -12 H-24 L-8 -38 H-18 Z"/></g><rect y="150" width="390" height="80" fill="url(#fd)"/></svg>';
 function home(){
   var n=dnow(),ps=prayerState(),k=key(n),c=count(k);
   var h=hijri(n),b=bnDate(n.getUTCFullYear(),n.getUTCMonth()+1,n.getUTCDate());
-  var frac=Math.min(1,Math.max(0,1-ps.info.left/ps.info.span)),r=90,len=Math.PI*r;
-  var html=banner(ps)+'<div class="hero"><div class="top"><div>'+WD[n.getUTCDay()]+(h?'<small>'+bn(h.d)+' '+h.m+', '+bn(h.y)+' হিজরি</small>':'')+'<small>'+bn(n.getUTCDate())+' '+EM[n.getUTCMonth()]+', '+bn(b.day)+' '+b.month+'</small></div></div>';
-  html+='<div class="dial"><svg viewBox="0 0 230 130"><path d="M25 115 A90 90 0 0 1 205 115" fill="none" stroke="rgba(20,53,44,.15)" stroke-width="12" stroke-linecap="round"/><path id="arc" d="M25 115 A90 90 0 0 1 205 115" fill="none" stroke="#14352c" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+len*frac+' '+len+'"/></svg>';
-  html+='<div class="nm">'+ps.info.name+'</div><div class="sub">'+(ps.info.wait?'শুরু হতে বাকি':'শেষ হতে বাকি')+'</div><div class="cd" id="cd">'+cdStr(ps.info.left)+'</div>';
-  html+='<div class="chips"><select class="sel-city" id="city">'+Object.keys(CITIES).map(function(x){return '<option'+(x===S.city?' selected':'')+'>'+x+'</option>'}).join('')+'</select><span class="chip">সূর্যোদয়: '+bn(hm(ps.t.sunrise))+'</span><span class="chip">সূর্যাস্ত: '+bn(hm(ps.t.sunset))+'</span></div></div></div>';
-  html+='<div class="sheet">';
+  var pct=Math.round(c*100/TOTAL),R=42,C=2*Math.PI*R;
+  var q=HQ[Math.floor(n.getTime()/86400000)%HQ.length];
+  var ic=["🌅","☀️","🌇","🌆","🌙"];
+  var html=banner(ps)+
+  '<div class="hdr"><button class="ib" data-tab="more" aria-label="মেনু">☰</button><div class="lg"><img src="/icon-192.png" alt=""><div><div class="tt">Daily Amol</div><small>— ইবাদতে হোক জীবনের আলো —</small></div></div><button class="ib" data-tab="more" aria-label="সেটিংস">⚙️</button></div>'+
+  '<div class="scene">'+SCENE+'<div class="qt"><b>“</b><p>'+q[0]+'</p><i>'+q[1]+'</i></div></div>'+
+  '<div class="arch"><div class="mi">🕌</div><div class="an">'+ps.info.name+'</div><div class="as">'+(ps.info.wait?'শুরু হতে বাকি':'শেষ হতে বাকি')+'</div><div class="cd" id="cd">'+cdStr(ps.info.left)+'</div><div class="hms"><span>ঘণ্টা</span><span>মিনিট</span><span>সেকেন্ড</span></div></div>'+
+  '<div class="chips"><select class="sel-city" id="city">'+Object.keys(CITIES).map(function(x){return '<option'+(x===S.city?' selected':'')+'>'+x+'</option>'}).join('')+'</select><span class="chip">🌅 সূর্যোদয়: '+bn(hm(ps.t.sunrise))+'</span><span class="chip">🌇 সূর্যাস্ত: '+bn(hm(ps.t.sunset))+'</span></div>'+
+  '<div class="dstrip"><div class="dc"><i>📅</i><div><b>'+WD[n.getUTCDay()]+'</b><small>'+(h?bn(h.d)+' '+h.m+', '+bn(h.y)+' হিজরি':'')+'</small></div></div><div class="dv"></div><div class="dc"><i>🗓️</i><div><b>'+bn(n.getUTCDate())+' '+EM[n.getUTCMonth()]+'</b><small>'+bn(b.day)+' '+b.month+', '+bn(n.getUTCFullYear())+'</small></div></div></div>'+
+  ramCard(ps,h)+'<div class="sheet">';
   ps.list.forEach(function(p,i){var on=isOn(k,"fard"+i);
-    html+='<div class="pr'+(i===ps.cur?' now':'')+'"><span class="n">'+p.n+'</span>'+(i===ps.cur?'<span class="dot"></span>':'')+'<span class="t">'+bn(hm(p.s))+' - '+bn(hm(p.e))+'</span><button class="ck'+(on?' on':'')+'" data-t="fard'+i+'" aria-label="'+p.n+' সম্পন্ন">'+(on?'✓':'')+'</button></div>'});
+    html+='<div class="pr'+(i===ps.cur?' now':'')+'"><span class="pi">'+ic[i]+'</span><span class="n">'+p.n+'</span><span class="t">'+bn(hm(p.s))+' - '+bn(hm(p.e))+'</span><button class="ck'+(on?' on':'')+'" data-t="fard'+i+'" aria-label="'+p.n+' সম্পন্ন">'+(on?'✓':'')+'</button></div>'});
   html+='</div>';
+  html+='<div class="prog"><div class="pg"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="'+R+'" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="9"/><circle cx="50" cy="50" r="'+R+'" fill="none" stroke="#8fe36a" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+(C*pct/100)+' '+C+'" transform="rotate(-90 50 50)"/></svg><div class="pc"><span>🤲</span><b>'+bn(pct)+'%</b></div></div><div class="pt"><div class="p1">আজকের আমল</div><div class="p2">'+bn(c)+'/'+bn(TOTAL)+' সম্পন্ন</div><div class="p3">'+(c===0?'চলুন, আজকের আমল শুরু করি ❤️':c===TOTAL?'মাশাআল্লাহ! সব আমল সম্পন্ন ✨':'আল্লাহর সন্তুষ্টি অর্জনের চেষ্টা করুন ❤️')+'</div></div><button class="gb" data-tab="amal">📊 বিস্তারিত দেখুন →</button></div>';
   html+='<div class="sd"><span style="font-size:34px">🌙</span><div><b>ফ্রাইডে গিভার্স – জুমআর দিনের সাদাকা</b><span class="mut">প্রতিটি জুমআ শুরু করুন সাদাকা দিয়ে</span></div></div>';
-  html+='<div class="card"><div class="sum"><b>আজকের আমল · '+bn(c)+'/'+bn(TOTAL)+'</b></div><div class="big">'+(c===0?'চলুন, আজকের আমলগুলো শুরু করি!':c===TOTAL?'মাশাআল্লাহ! আজকের সব আমল সম্পন্ন।':'চালিয়ে যান, আর '+bn(TOTAL-c)+'টি বাকি।')+'</div><div class="mut">আল্লাহর সাথে সম্পর্ক হোক আরেকটু গভীর।</div></div>';
   html+=goals(k)+'<div class="card"><div class="sum"><b>টপ ফিচার</b><button class="lnk" data-tab="feat">আরও দেখুন</button></div>'+featGrid()+'</div>'+forbSec(ps);
   return html}
 
@@ -234,7 +322,6 @@ function duaTab(){return '<div class="card" style="margin-top:0"><h3 style="marg
 function more(){
   var th=store("theme")||"auto",adj=HA();
   return '<div class="card" style="margin-top:0"><h3 style="margin:0 0 4px;font-size:20px">সেটিংস</h3><div class="set"><span>শহর</span><select id="city2">'+Object.keys(CITIES).map(function(x){return '<option'+(x===S.city?' selected':'')+'>'+x+'</option>'}).join('')+'</select></div>'+
-  '<div class="set"><span>থিম</span><select id="theme"><option value="auto"'+(th==="auto"?" selected":"")+'>স্বয়ংক্রিয়</option><option value="light"'+(th==="light"?" selected":"")+'>লাইট</option><option value="dark"'+(th==="dark"?" selected":"")+'>ডার্ক</option></select></div>'+
 '<div class="set"><span>হিজরি তারিখ সমন্বয়</span><span><button class="btn" id="hm">−</button> <b>'+bn(adj)+'</b> <button class="btn" id="hp">+</button></span></div>'+
   '<p class="mut">নামাজের সময় গণনা করা হয় (কারাচি পদ্ধতি, আসরের জন্য হানাফি)। স্থানীয় মসজিদ বা সরকারি সময়সূচির সাথে মিলিয়ে নিন। চাঁদ দেখার ভিত্তিতে হিজরি তারিখ এক দিন এদিক-ওদিক হতে পারে, তাই সমন্বয়ের বাটন রাখা হয়েছে।</p></div>'}
 
@@ -347,7 +434,7 @@ var NM=[["الرَّحْمَٰنُ", "আর-রাহমান", "পরম ক
 function names(){
   return back()+'<div class="card" style="margin-top:0"><h3 style="margin:0 0 4px;font-size:20px">☝️ আল্লাহর ৯৯টি নাম</h3><div class="mut">আল-আসমাউল হুসনা: উচ্চারণ ও অর্থসহ</div><div class="mut" style="margin-top:8px;font-size:14px;line-height:1.6">নবী ﷺ বলেছেন, আল্লাহর ৯৯টি নাম আছে; যে এগুলো আয়ত্ত করবে (মুখস্থ করবে, অর্থ বুঝবে ও আমল করবে), সে জান্নাতে প্রবেশ করবে। (সহিহ বুখারি ও সহিহ মুসলিম)</div></div>'+
   NM.map(function(n,i){return '<div class="card" style="display:flex;gap:12px;align-items:center"><div style="min-width:34px;height:34px;border-radius:50%;background:var(--gl);color:var(--g);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">'+bn(i+1)+'</div><div style="flex:1;min-width:0"><div style="font-size:22px;font-weight:700">'+n[1]+'</div><div class="mut" style="margin-top:2px;font-size:15px">'+n[2]+'</div></div><div class="ar" style="font-size:26px;text-align:right;line-height:1.5">'+n[0]+'</div></div>'}).join("")}
-var CREDIT='<div style="text-align:center;margin:26px 20px 12px;padding-top:14px;border-top:1px solid var(--line)"><div class="mut" style="font-size:12px;letter-spacing:.5px">✨ Created by</div><div style="font-size:17px;font-weight:700;color:var(--g);letter-spacing:.4px;margin-top:2px">Arafat Rahman</div></div>';
+var CREDIT='<div class="cred" style="text-align:center;margin:26px 20px 12px;padding-top:14px;border-top:1px solid rgba(233,185,73,.4)"><div style="font-size:12px;letter-spacing:.5px;color:#cfe0d6">✨ Created by</div><div style="font-size:17px;font-weight:700;color:#f0c85a;letter-spacing:.4px;margin-top:2px">Arafat Rahman</div></div>';
 function feat(){if(S.sub==="quran")return quranView();if(S.sub==="names")return names();if(S.sub==="qibla")return qibla();if(S.sub==="tasbih")return tasbih();if(S.sub==="ruq")return ruq();
   return '<div class="card" style="margin-top:0"><h3 style="margin:0;font-size:20px">ফিচার্স</h3>'+featGrid()+'</div>'+forbSec(prayerState())}
 function fbWin(ps){var t=ps.t;return [[t.sunrise,t.sunrise+.25,"সূর্যোদয়ের সময়"],[t.dhuhr-.14,t.dhuhr,"ঠিক দুপুর (যাওয়াল)"],[t.sunset-.25,t.sunset,"সূর্যাস্তের সময়"]]}
@@ -564,7 +651,7 @@ document.addEventListener("change",function(e){
   if(e.target.id==="city"||e.target.id==="city2"){S.city=e.target.value;store("city",S.city);render()}
   if(e.target.id==="theme"){store("theme",e.target.value);applyTheme()}});
 setInterval(function(){if(S.tab!=="home")return;var ps=prayerState(),c=document.getElementById("cd");if(!c){return}
-  c.textContent=cdStr(ps.info.left);if(ps.info.left<=0.0003||fbNow(ps)!==S.fbs)render()},1000);
+  c.textContent=cdStr(ps.info.left);var rc=document.getElementById("rcd");if(rc)rc.textContent=cdStr(ramInfo(ps).left);if(ps.info.left<=0.0003||fbNow(ps)!==S.fbs)render()},1000);
 applyTheme();render();
 </script>
 <script>
