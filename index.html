@@ -254,7 +254,32 @@ nav button.on:after{left:0;right:0;bottom:-8px;height:3px;border-radius:0}
 .fx .fr span:last-child{font-weight:700;font-size:3.5cqw;font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif}
 .fx .tip{display:flex;align-items:center;gap:2cqw;margin:1.6cqw 2.4cqw 2.4cqw;background:rgb(220,241,192);border-radius:4cqw;padding:1.4cqw 3cqw;font-size:2.7cqw;line-height:1.45}
 .fx .tip img{width:6cqw;height:auto}
-#app.qr #nav{display:none}</style>
+#app.qr #nav{display:none}
+.ax{padding:0 0 10px}
+.ax .week{background:linear-gradient(180deg,#0f6a27,#0a4d1c);margin:10px 12px 12px;border-radius:22px;padding:10px 4px 8px;box-shadow:0 0 0 1.5px #d8b13c inset,0 6px 14px rgba(0,0,0,.3);position:static}
+.ax .d{color:#cfe8d3;font-weight:600}
+.ax .d i{color:#fff;font-weight:700}
+.ax .d.sel{color:#ffd21f}
+.ax .d.sel i{background:linear-gradient(180deg,#ffd45a,#d8a22a);color:#143d22;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.ax .d svg circle{stroke:rgba(255,255,255,.25)}
+.ax .d svg circle+circle{stroke:#ffd21f}
+.ax .sumc{background:linear-gradient(180deg,#0f4d33,#0a3a26)!important;border:1.5px solid #d8b13c;color:#fff;box-shadow:0 6px 14px rgba(0,0,0,.3)}
+.ax .sumc .big{color:#ffd21f!important;font-size:30px!important}
+.ax .sumc .mut{color:#cfe8d3}
+.ax .sumc .sum b{color:#fff;background:rgba(255,210,31,.15);border:1px solid #d8b13c;border-radius:99px;padding:6px 14px}
+.ax .sumc .pbar{height:8px;background:rgba(255,255,255,.15);border-radius:9px;margin-top:12px;overflow:hidden}
+.ax .sumc .pbar span{display:block;height:100%;background:linear-gradient(90deg,#3fcf5f,#ffd21f);border-radius:9px;transition:width .5s}
+.ax .card:not(.sumc){border:1.5px solid #d8b13c;box-shadow:0 6px 14px rgba(0,0,0,.28),0 0 0 3px rgba(15,106,39,.55)}
+.ax .hd h3{color:#0a4d1c;font-size:19px}
+.ax .hd h3::before{content:"";display:inline-block;width:6px;height:18px;border-radius:3px;background:linear-gradient(180deg,#ffd21f,#0f6a27);margin-right:8px;vertical-align:-3px}
+.ax .bar{background:#dcefd8;height:7px}
+.ax .bar span{background:linear-gradient(90deg,#0f8a35,#ffd21f)}
+.ax .ico{background:#dcefd8;box-shadow:0 0 0 2px #fff,0 0 0 3px #d8b13c}
+.ax .itm{border-top:1px solid rgba(20,61,34,.1)}
+.ax .ck{background:#eef0e8;border:1.5px solid #cdd3c2}
+.ax .ck.on{background:linear-gradient(180deg,#14a047,#0a5a25);border-color:#d8b13c;box-shadow:0 0 0 2px rgba(216,177,60,.35);animation:pop .35s}
+@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+</style>
 </head>
 <body>
 <div id="app">
@@ -385,12 +410,12 @@ function week(){
   return h+'</div>'}
 function amal(){
   var k=S.day,c=count(k),h=week();
-  h+='<div class="card" style="margin-top:0"><div class="sum"><div><div class="big" style="margin:0;font-size:22px">'+bn(Math.round(c/TOTAL*100))+'%</div><div class="mut">আমল ট্র্যাক করুন</div></div><b>'+bn(c)+'/'+bn(TOTAL)+'</b></div></div>';
+  h+='<div class="card sumc" style="margin-top:0"><div class="sum"><div><div class="big" style="margin:0;font-size:22px">'+bn(Math.round(c/TOTAL*100))+'%</div><div class="mut">আজকের আমল</div></div><b>'+bn(c)+'/'+bn(TOTAL)+'</b></div><div class="pbar"><span style="width:'+(c/TOTAL*100)+'%"></span></div></div>';
   CATS.forEach(function(ct){var cc=count(k,ct.id),open=S.open[ct.id];
     h+='<div class="card'+(open?' open':'')+'"><button class="hd" data-o="'+ct.id+'"><div style="flex:1"><h3>'+ct.t+'</h3><div class="bar"><span style="width:'+cc/ct.it.length*100+'%"></span></div><b style="color:var(--g)">'+bn(cc)+'/'+bn(ct.it.length)+'</b></div><span class="chev">⌃</span></button><div class="body">';
     ct.it.forEach(function(x,i){var on=isOn(k,ct.id+i);h+='<div class="itm"><div class="ico">'+ct.ic+'</div><span>'+x+'</span><button class="ck'+(on?' on':'')+'" data-t="'+ct.id+i+'" aria-label="'+x+'">'+(on?'✓':'')+'</button></div>'});
     h+='</div></div>'});
-  return h}
+  return '<div class="ax">'+h+'</div>'}
 var DUAS=[
  {t:"খাওয়ার শুরুতে",a:"بِسْمِ اللهِ",m:"বিসমিল্লাহ (আল্লাহর নামে শুরু করছি)।"},
  {t:"খাওয়া শেষে",a:"الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِينَ",m:"সমস্ত প্রশংসা আল্লাহর, যিনি আমাদের খাইয়েছেন, পান করিয়েছেন এবং মুসলিম বানিয়েছেন।"},
