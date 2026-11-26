@@ -279,6 +279,90 @@ nav button.on:after{left:0;right:0;bottom:-8px;height:3px;border-radius:0}
 .ax .ck{background:#eef0e8;border:1.5px solid #cdd3c2}
 .ax .ck.on{background:linear-gradient(180deg,#14a047,#0a5a25);border-color:#d8b13c;box-shadow:0 0 0 2px rgba(216,177,60,.35);animation:pop .35s}
 @keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+
+.ax .card:not(.sumc){padding:0;overflow:hidden;margin:14px 12px}
+.ax .hd{padding:14px 16px;background:linear-gradient(90deg,#0a4d1c,#0f6a27 60%,#177a30);border-radius:0}
+.ax .hd h3{color:#ffd21f;font-size:19px}
+.ax .hd h3::before{background:linear-gradient(180deg,#ffd21f,#fff)}
+.ax .hd .bar{background:rgba(255,255,255,.22);width:78%;height:7px}
+.ax .hd .bar span{background:linear-gradient(90deg,#9be37c,#ffd21f)}
+.ax .hd b{color:#fff!important;font-size:14px;background:rgba(255,210,31,.18);border:1px solid rgba(216,177,60,.7);border-radius:99px;padding:1px 10px;display:inline-block;margin-top:4px}
+.ax .hd .chev{color:#ffd21f;font-size:20px;background:rgba(255,255,255,.12);width:32px;height:32px;border-radius:50%;display:grid;place-items:center}
+.ax .body{padding:2px 16px 8px}
+.ax .itm{padding:11px 0;gap:12px}
+.ax .itm:first-child{border-top:0}
+.ax .itm .ck.on+*{}
+.ax .itm span{font-weight:500}
+
+.fx.hm .dch{display:flex;gap:1.6cqw;overflow-x:auto;padding:2cqw 2.5cqw 2.4cqw;scrollbar-width:none}
+.fx .dch::-webkit-scrollbar{display:none}
+.fx .dch button{flex:none;border:1px solid #cfe3c9;background:#e9f4e4;color:#143d22;border-radius:5cqw;padding:1.4cqw 3.6cqw;font-family:inherit;font-size:3.6cqw;font-weight:600;cursor:pointer}
+.fx .dch button.on{background:linear-gradient(180deg,#127a2e,#0a4a1b);color:#ffd21f;border-color:#d8b13c}
+.fx .dc{margin:0 2.5cqw 2.6cqw;padding:3cqw 3.4cqw;border:1px solid rgba(216,177,60,.55);border-radius:4cqw;background:#fffdf4}
+.fx .dc h4{margin:0 0 1.6cqw;font-size:4cqw;color:#0a4d1c}
+.fx .dc .ar{direction:rtl;text-align:right;font-size:6.4cqw;line-height:2;color:#143d22;font-family:"Amiri","Scheherazade New","Noto Naskh Arabic",serif}
+.fx .dc p{margin:1.2cqw 0 0;font-size:3.7cqw;line-height:1.65;color:#27412f}
+.fx .dc .src{display:flex;justify-content:space-between;align-items:center;margin-top:1.8cqw;font-size:3cqw;color:#6a7d6f}
+.fx .shr{border:1px solid #d8b13c;background:#fff;color:#0a4d1c;border-radius:4cqw;padding:.8cqw 3cqw;font-family:inherit;font-size:3.2cqw;font-weight:600;cursor:pointer}
+.fx .note{margin:1cqw 3.4cqw 3cqw;font-size:3.2cqw;color:#5d7064;line-height:1.6}
+.fx .row{display:flex;justify-content:space-between;align-items:center;gap:3cqw;padding:3cqw 4cqw;border-bottom:1px solid rgba(20,61,34,.12);font-size:4cqw;color:#143d22}
+.fx .row select{font-family:inherit;font-size:4cqw;padding:1.4cqw 2.6cqw;border-radius:3cqw;border:1px solid #cfe3c9;background:#fff;color:#143d22}
+.fx .row .btn{padding:1cqw 3.4cqw}
+.fx .sw{width:12cqw;height:6.6cqw;border-radius:5cqw;border:0;background:#cdd6c9;position:relative;cursor:pointer;padding:0;flex:none}
+.fx .sw::after{content:"";position:absolute;top:.8cqw;left:.8cqw;width:5cqw;height:5cqw;border-radius:50%;background:#fff;transition:left .2s;box-shadow:0 .3cqw .8cqw rgba(0,0,0,.3)}
+.fx .sw.on{background:linear-gradient(180deg,#14a047,#0a5a25)}
+.fx .sw.on::after{left:5.8cqw}
+.fx .abt{padding:3.4cqw 4cqw 4cqw;font-size:3.7cqw;line-height:1.7;color:#27412f}
+.fx .abt b{color:#0a4d1c}
+.fx .dd{margin:0 2.5cqw 2.6cqw;padding:3cqw 3.4cqw;border:1px solid rgba(216,177,60,.55);border-radius:4cqw;background:#fffdf4}
+.fx .dd .k{font-size:3.2cqw;color:#8a6d12;font-weight:700;margin-bottom:1cqw}
+.fx .dd .ar{direction:rtl;text-align:right;font-size:6cqw;line-height:2;color:#143d22;font-family:"Amiri","Scheherazade New","Noto Naskh Arabic",serif}
+.fx .dd p{margin:1cqw 0 0;font-size:3.8cqw;line-height:1.65;color:#27412f}
+.fx .dd .src{display:flex;justify-content:space-between;align-items:center;margin-top:1.6cqw;font-size:3cqw;color:#6a7d6f}
+#toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);background:rgba(6,40,28,.95);color:#fff;border:1px solid #d8b13c;border-radius:20px;padding:10px 18px;font-size:15px;z-index:99;max-width:86%;text-align:center}
+#cel{position:fixed;inset:0;z-index:98;display:flex;align-items:center;justify-content:center;background:rgba(0,20,10,.78);animation:fadein .3s}
+#cel div.bx{background:linear-gradient(180deg,#0f6a27,#0a3a1a);border:2px solid #ffd21f;border-radius:28px;padding:28px 24px;text-align:center;color:#fff;max-width:82%;animation:pop .5s}
+#cel .em{font-size:64px}#cel h2{margin:8px 0;color:#ffd21f;font-size:24px}#cel p{margin:0 0 14px;line-height:1.6}
+#cel button{border:0;background:linear-gradient(180deg,#ffd45a,#d8a22a);color:#143d22;font-weight:700;font-family:inherit;font-size:17px;border-radius:99px;padding:10px 28px;cursor:pointer}
+#cel i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+body.night .fx .fin,body.night .fx .dc,body.night .fx .dd{background:#10261c;color:#e8f3ea}
+body.night .fx .dc{background:#143025}body.night .fx .dd{background:#143025}
+body.night .fx .fin,body.night .fx .fin .row,body.night .fx .dc h4,body.night .fx .dc .ar,body.night .fx .dc p,body.night .fx .dd .ar,body.night .fx .dd p,body.night .fx .abt,body.night .fx .abt b,body.night .fx .tg .fi,body.night .fx .q5 button,body.night .fx .th button,body.night .fx .fr{color:#e8f3ea}
+body.night .fx .dc .src,body.night .fx .dd .src,body.night .fx .note,body.night .fx .q5 small{color:#a9c3b3}
+body.night .fx .dch button{background:#1b3a2c;border-color:#2c5a43;color:#e8f3ea}
+body.night .fx .row select{background:#143025;color:#e8f3ea;border-color:#2c5a43}
+body.night .fx .tg .fi i{background:#1d3d2f;color:#e8f3ea}
+body.night .fx .tip{background:#1b3a2c}
+body.night .fx .shr{background:#10261c;color:#ffd21f}
+body.night .ax .card:not(.sumc){background:#10261c;color:#e8f3ea}
+body.night .ax .hd h3,body.night .ax .itm{color:#e8f3ea}
+body.night .ax .bar{background:#1d3d2f}
+body.night .ax .ico{background:#1d3d2f;box-shadow:0 0 0 2px #10261c,0 0 0 3px #d8b13c}
+body.night .ax .ck{background:#1d3d2f;border-color:#2c5a43}
+body.night .sheet,body.night .prog{filter:brightness(.82)}
+
+.ax .sm{display:flex;align-items:center;gap:16px;padding:16px 18px!important}
+.ax .sm .rg{position:relative;width:92px;height:92px;flex:none}
+.ax .sm .rg svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ax .sm .rg b{position:absolute;inset:0;display:grid;place-items:center;font-size:22px;color:#fff}
+.ax .sm .tx{flex:1;min-width:0}
+.ax .sm .t1{font-size:15px;color:#cfe8d3}
+.ax .sm .t2{font-size:24px;font-weight:700;color:#ffd21f;margin:2px 0}
+.ax .sm .t3{font-size:13.5px;color:#cfe8d3;line-height:1.5}
+.ax .hd .tr{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ax .hd .bi{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2aa84f,#0a4d1c);box-shadow:0 0 0 2px #d8b13c;display:grid;place-items:center;font-size:23px;flex:none}
+.ax .hd{align-items:center;gap:12px;padding:12px 14px}
+.ax .hd .bar{height:6px;margin-top:8px;width:100%}
+.ax .hd b{margin-top:0}
+.ax .card.done .hd{background:linear-gradient(90deg,#8a6a12,#d8b13c 80%)}
+.ax .card.done .hd h3,.ax .card.done .hd b{color:#143d22!important}
+.ax .card.done .hd b{background:rgba(255,255,255,.55);border-color:#8a6a12}
+.ax .card.done .hd .chev{color:#143d22;background:rgba(255,255,255,.4)}
+.ax .ico{font-size:21px}
+.ax .itm.dn span{color:#0a7a2f;font-weight:700}
+.ax .itm span{font-size:17px}
 </style>
 </head>
 <body>
@@ -400,7 +484,7 @@ function home(){
   html+='</div>';
   html+='<div class="prog"><div class="pg"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="'+R+'" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="9"/><circle cx="50" cy="50" r="'+R+'" fill="none" stroke="#4fd13a" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+(C*pct/100)+' '+C+'" transform="rotate(-90 50 50)"/></svg><div class="pc"><img src="'+ART.fig+'" alt=""><b>'+bn(pct)+'%</b></div></div><div class="pt"><div class="p1">আজকের আমল</div><div class="p2">'+bn(c)+'/'+bn(TOTAL)+' সম্পন্ন</div><div class="p3">'+(c===0?'চলুন, আজকের আমল শুরু করি ❤️':c===TOTAL?'মাশাআল্লাহ! সব আমল সম্পন্ন ✨':'আল্লাহর সন্তুষ্টি অর্জনের চেষ্টা করুন ❤️')+'</div></div><button class="gb" data-tab="amal"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M3 20h18v-2H3zM5 16h3v-6H5zm5.5 0h3V6h-3zM16 16h3v-9h-3z"/></svg> বিস্তারিত দেখুন →</button></div>';
   html+='<div class="ban2"><img src="'+ART.banner+'" alt=""><div class="bt1">ফ্রাইডে গিভার্স – জুমআর দিনের সাদাকা</div><div class="bt2">প্রতিটি জুমআ শুরু করুন সাদাকা দিয়ে</div></div>';
-  html+=featCards(ps,1);
+  html+=dailyCard()+featCards(ps,1);
   return html}
 
 function week(){
@@ -760,6 +844,50 @@ function goalView(){var id=S.goal,x=GO.filter(function(a){return a[0]===id})[0],
   if(cnt)h+='<button class="btn" data-gc="1" style="width:100%;margin-top:12px;font-size:17px">+১ গণনা</button>';
   h+='<button class="go" data-gd="1" style="border:0;width:100%;font-family:inherit;cursor:pointer;margin-top:12px">'+(done?'✓ পড়েছি':'পড়েছি')+'</button></div>';
   return h}
+
+var DUAS2=[["সকাল-সন্ধ্যা", "সকাল-সন্ধ্যার সুরক্ষা (৩ বার)", "بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ", "আল্লাহর নামে, যাঁর নামের সাথে আসমান ও জমিনের কোনো কিছুই ক্ষতি করতে পারে না। তিনি সর্বশ্রোতা, সর্বজ্ঞ।", "আবু দাউদ, তিরমিযী"], ["সকাল-সন্ধ্যা", "সাইয়্যিদুল ইস্তেগফার", "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ لَكَ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ", "হে আল্লাহ, আপনি আমার রব, আপনি ছাড়া কোনো ইলাহ নেই। আপনি আমাকে সৃষ্টি করেছেন, আমি আপনার বান্দা। আমি সাধ্যমতো আপনার অঙ্গীকারে ও প্রতিশ্রুতিতে আছি। আমার কৃতকর্মের অনিষ্ট থেকে আপনার আশ্রয় চাই। আমার ওপর আপনার নিয়ামত স্বীকার করছি এবং আমার গুনাহও স্বীকার করছি। অতএব আমাকে ক্ষমা করুন, কারণ আপনি ছাড়া গুনাহ ক্ষমা করার কেউ নেই।", "সহীহ বুখারী"], ["সকাল-সন্ধ্যা", "সকাল-সন্ধ্যায় আল্লাহর ওপর ভরসা (৭ বার)", "حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ", "আল্লাহই আমার জন্য যথেষ্ট, তিনি ছাড়া কোনো ইলাহ নেই। তাঁর ওপরই আমি ভরসা করলাম, আর তিনি মহান আরশের রব।", "সূরা তাওবা ৯:১২৯"], ["ঘুম-জাগা", "ঘুমানোর আগে", "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا", "হে আল্লাহ, আপনার নামেই আমি মরি (ঘুমাই) এবং বাঁচি (জাগি)।", "সহীহ বুখারী"], ["ঘুম-জাগা", "ঘুম থেকে উঠে", "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", "সমস্ত প্রশংসা আল্লাহর, যিনি মৃত্যুর (ঘুমের) পর আমাদের জীবিত করেছেন, আর তাঁর কাছেই ফিরে যেতে হবে।", "সহীহ বুখারী"], ["খাওয়া", "খাওয়ার শুরুতে", "بِسْمِ اللهِ", "আল্লাহর নামে (শুরু করছি)।", "আবু দাউদ, তিরমিযী"], ["খাওয়া", "শুরুতে বলতে ভুলে গেলে", "بِسْمِ اللهِ أَوَّلَهُ وَآخِرَهُ", "শুরুতে ও শেষে আল্লাহর নামে।", "আবু দাউদ, তিরমিযী"], ["খাওয়া", "খাওয়া শেষে", "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِينَ", "সমস্ত প্রশংসা আল্লাহর, যিনি আমাদের খাইয়েছেন, পান করিয়েছেন এবং মুসলিম বানিয়েছেন।", "আবু দাউদ, তিরমিযী"], ["বাড়ি-মসজিদ", "ঘর থেকে বের হওয়ার সময়", "بِسْمِ اللهِ تَوَكَّلْتُ عَلَى اللهِ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ", "আল্লাহর নামে, আল্লাহর ওপর ভরসা করলাম। আল্লাহ ছাড়া কোনো উপায় বা শক্তি নেই।", "আবু দাউদ, তিরমিযী"], ["বাড়ি-মসজিদ", "ঘরে প্রবেশের সময়", "بِسْمِ اللهِ وَلَجْنَا وَبِسْمِ اللهِ خَرَجْنَا وَعَلَى رَبِّنَا تَوَكَّلْنَا", "আল্লাহর নামে প্রবেশ করলাম, আল্লাহর নামে বের হলাম, আর আমাদের রবের ওপর ভরসা করলাম।", "আবু দাউদ"], ["বাড়ি-মসজিদ", "মসজিদে প্রবেশের সময়", "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ", "হে আল্লাহ, আমার জন্য আপনার রহমতের দরজাগুলো খুলে দিন।", "সহীহ মুসলিম"], ["বাড়ি-মসজিদ", "মসজিদ থেকে বের হওয়ার সময়", "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ", "হে আল্লাহ, আমি আপনার অনুগ্রহ প্রার্থনা করি।", "সহীহ মুসলিম"], ["বাড়ি-মসজিদ", "টয়লেটে প্রবেশের সময়", "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ", "হে আল্লাহ, আমি আপনার কাছে নোংরা ও অপবিত্র সবকিছু থেকে আশ্রয় চাই।", "সহীহ বুখারী, মুসলিম"], ["বাড়ি-মসজিদ", "টয়লেট থেকে বের হয়ে", "غُفْرَانَكَ", "হে আল্লাহ, আমি আপনার ক্ষমা চাই।", "আবু দাউদ, তিরমিযী"], ["সফর", "সফরে বাহনে ওঠার সময়", "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ", "পবিত্র সেই সত্তা, যিনি এটিকে আমাদের বশীভূত করে দিয়েছেন, অথচ আমরা একে বশ করতে সক্ষম ছিলাম না। আর আমরা অবশ্যই আমাদের রবের কাছে ফিরে যাব।", "সূরা যুখরুফ ৪৩:১৩-১৪"], ["ইস্তেগফার-বিপদ", "গুনাহ মাফের দোয়া", "رَبَّنَا ظَلَمْنَا أَنْفُسَنَا وَإِنْ لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ", "হে আমাদের রব, আমরা নিজেদের ওপর জুলুম করেছি। আপনি যদি আমাদের ক্ষমা না করেন ও দয়া না করেন, তবে আমরা অবশ্যই ক্ষতিগ্রস্তদের অন্তর্ভুক্ত হব।", "সূরা আরাফ ৭:২৩"], ["ইস্তেগফার-বিপদ", "বিপদে পড়লে", "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ", "আপনি ছাড়া কোনো ইলাহ নেই, আপনি পবিত্র। নিশ্চয়ই আমি জালিমদের অন্তর্ভুক্ত ছিলাম।", "সূরা আম্বিয়া ২১:৮৭"], ["ইস্তেগফার-বিপদ", "মুসিবতে পড়লে", "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ", "নিশ্চয়ই আমরা আল্লাহরই এবং নিশ্চয়ই আমরা তাঁরই কাছে ফিরে যাব।", "সূরা বাকারা ২:১৫৬"], ["ইস্তেগফার-বিপদ", "অসুস্থ ব্যক্তির জন্য", "اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ اشْفِ أَنْتَ الشَّافِي لَا شِفَاءَ إِلَّا شِفَاؤُكَ شِفَاءً لَا يُغَادِرُ سَقَمًا", "হে মানুষের রব, কষ্ট দূর করে দিন, সুস্থতা দান করুন। আপনিই আরোগ্যদাতা, আপনার আরোগ্য ছাড়া কোনো আরোগ্য নেই। এমন আরোগ্য দিন, যা কোনো রোগ রাখে না।", "সহীহ বুখারী, মুসলিম"], ["কুরআনের দোয়া", "দুনিয়া ও আখিরাতের কল্যাণ", "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ", "হে আমাদের রব, আমাদের দুনিয়াতে কল্যাণ দিন, আখিরাতেও কল্যাণ দিন এবং আমাদের জাহান্নামের আগুন থেকে রক্ষা করুন।", "সূরা বাকারা ২:২০১"], ["কুরআনের দোয়া", "জ্ঞান বৃদ্ধির দোয়া", "رَبِّ زِدْنِي عِلْمًا", "হে আমার রব, আমার জ্ঞান বাড়িয়ে দিন।", "সূরা ত্বা-হা ২০:১১৪"], ["কুরআনের দোয়া", "মন সহজ করার দোয়া", "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي", "হে আমার রব, আমার বক্ষ প্রশস্ত করে দিন এবং আমার কাজ সহজ করে দিন।", "সূরা ত্বা-হা ২০:২৫-২৬"], ["কুরআনের দোয়া", "হিদায়াতের ওপর অটল থাকার দোয়া", "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً إِنَّكَ أَنْتَ الْوَهَّابُ", "হে আমাদের রব, হিদায়াত দেওয়ার পর আমাদের অন্তরকে বাঁকা করে দেবেন না এবং আপনার কাছ থেকে আমাদের রহমত দান করুন। নিশ্চয়ই আপনি মহান দাতা।", "সূরা আলে ইমরান ৩:৮"], ["পরিবার", "পিতা-মাতার জন্য দোয়া", "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا", "হে আমার রব, তাঁদের দুজনের প্রতি দয়া করুন, যেমন তাঁরা শৈশবে আমাকে লালন-পালন করেছেন।", "সূরা বনী ইসরাঈল ১৭:২৪"], ["পরিবার", "নেক স্ত্রী-সন্তানের দোয়া", "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا", "হে আমাদের রব, আমাদের স্ত্রী ও সন্তানদের থেকে আমাদের চোখের শীতলতা দান করুন এবং আমাদের মুত্তাকীদের নেতা বানান।", "সূরা ফুরকান ২৫:৭৪"], ["পরিবার", "নামাজ কায়েমের দোয়া", "رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ", "হে আমার রব, আমাকে নামাজ কায়েমকারী বানান এবং আমার সন্তানদেরও। হে আমাদের রব, আমার দোয়া কবুল করুন।", "সূরা ইবরাহীম ১৪:৪০"]],DCATS=["সকাল-সন্ধ্যা", "ঘুম-জাগা", "খাওয়া", "বাড়ি-মসজিদ", "সফর", "ইস্তেগফার-বিপদ", "কুরআনের দোয়া", "পরিবার"];
+function toast(t){var o=document.getElementById("toast");if(o)o.remove();o=document.createElement("div");o.id="toast";o.textContent=t;document.body.appendChild(o);setTimeout(function(){if(o.parentNode)o.remove()},2200)}
+function shareTxt(t){if(navigator.share){navigator.share({text:t}).catch(function(){})}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast("কপি হয়েছে। এখন যেখানে খুশি পেস্ট করুন।")},function(){toast("কপি করা যায়নি")})}else toast("শেয়ার করা যায়নি")}
+var SHR=[];
+function shrBtn(t){SHR.push(t);return '<button class="shr" data-share="'+(SHR.length-1)+'">↗ শেয়ার</button>'}
+function duaTab(){
+  SHR=[];var c=S.dc||"সব";
+  var chips='<div class="dch">'+["সব"].concat(DCATS).map(function(x){return '<button data-dc="'+x+'" class="'+(x===c?'on':'')+'">'+x+'</button>'}).join('')+'</div>';
+  var list=DUAS2.filter(function(d){return c==="সব"||d[0]===c}).map(function(d){return '<div class="dc"><h4>'+d[1]+'</h4><div class="ar">'+d[2]+'</div><p>'+d[3]+'</p><div class="src"><span>সূত্র: '+d[4]+'</span>'+shrBtn(d[1]+"\n\n"+d[2]+"\n\n"+d[3]+"\n(সূত্র: "+d[4]+")\n— Daily Amol")+'</div></div>'}).join('');
+  return '<div class="fx hm"><div class="fw w1" style="width:92%"><div class="ft">দৈনন্দিন <b>দোয়া</b></div><div class="fin" style="padding-top:6cqw">'+chips+list+'<div class="note">ভাবার্থগুলো সংক্ষিপ্ত। আরবি ও অর্থ কোনো আলেমের কাছে মিলিয়ে নেওয়া ভালো।</div></div></div></div>'}
+function dailyCard(){
+  SHR=[];var v=pick(VERSES,5)[0],a=pick(HAD,1)[0];
+  var vt=v[0]+"\n\n"+v[1]+"\n\n"+v[2]+"\n— Daily Amol",ht=a[2]+"\n\n"+a[0]+"\n(সূত্র: "+a[1]+")\n— Daily Amol";
+  return '<div class="fx hm" style="padding-bottom:0"><div class="fw w1" style="width:92%"><div class="ft">আজকের <b>আয়াত ও হাদিস</b></div><div class="fin" style="padding-top:6cqw;padding-bottom:1cqw"><div class="dd"><div class="k">📖 আজকের আয়াত · '+v[0]+'</div><div class="ar">'+v[1]+'</div><p>'+v[2]+'</p><div class="src"><span></span>'+shrBtn(vt)+'</div></div><div class="dd"><div class="k">📜 আজকের হাদিস (ভাবানুবাদ)</div><div class="ar">'+a[2]+'</div><p>'+a[0]+'</p><div class="src"><span>সূত্র: '+a[1]+'</span>'+shrBtn(ht)+'</div></div></div></div></div>'}
+function more(){
+  var adj=HA(),night=!!store("night");
+  return '<div class="fx hm"><div class="fw w1" style="width:92%"><div class="ft"><b>সেটিংস</b></div><div class="fin" style="padding-top:6cqw"><div class="row"><span>শহর</span><select id="city2">'+Object.keys(CITIES).map(function(x){return '<option'+(x===S.city?' selected':'')+'>'+x+'</option>'}).join('')+'</select></div><div class="row"><span>হিজরি তারিখ সমন্বয়</span><span><button class="btn" id="hm">−</button> <b>'+bn(adj)+'</b> <button class="btn" id="hp">+</button></span></div><div class="row" style="border-bottom:0"><span>🌙 রাতের মোড</span><button class="sw'+(night?' on':'')+'" data-night="1" aria-label="রাতের মোড"></button></div><div class="note">নামাজের সময় গণনা করা হয় (কারাচি পদ্ধতি, আসরের জন্য হানাফি)। স্থানীয় মসজিদ বা সরকারি সময়সূচির সাথে মিলিয়ে নিন। চাঁদ দেখার ভিত্তিতে হিজরি তারিখ এক দিন এদিক-ওদিক হতে পারে, তাই সমন্বয়ের বাটন রাখা হয়েছে।</div></div></div>'+
+  '<div class="fw w2" style="width:92%"><div class="ft">অ্যাপ <b>সম্পর্কে</b></div><div class="fin" style="padding-top:6cqw"><div class="abt"><b>Daily Amol</b> — প্রতিদিনের আমল, নামাজের সময়, কুরআন ও দোয়া এক জায়গায়।<br>তৈরি করেছেন <b>Arafat Rahman</b>।<div style="margin-top:2cqw"><button class="shr" data-shareapp="1">↗ বন্ধুকে অ্যাপটি শেয়ার করুন</button></div></div></div></div></div>'}
+function applyNight(){document.body.classList.toggle("night",!!store("night"));var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",store("night")?"#031a12":"#06281c")}
+applyNight();
+document.addEventListener("click",function(e){
+  var t=e.target.closest&&e.target.closest("button");if(!t)return;
+  if(t.dataset.dc){S.dc=t.dataset.dc;render();return}
+  if(t.dataset.share!==undefined){shareTxt(SHR[+t.dataset.share]);return}
+  if(t.dataset.shareapp){shareTxt("Daily Amol — প্রতিদিনের আমল, নামাজের সময়, কুরআন ও দোয়া:\nhttps://dailyamalbd.github.io");return}
+  if(t.dataset.night){store("night",store("night")?0:1);applyNight();render();return}
+  if(t.dataset.t){setTimeout(celeb,80)}});
+function celeb(){var k=S.day;if(k!==key(dnow())||count(k)<TOTAL||store("cel_"+k))return;store("cel_"+k,1);
+  var o=document.createElement("div");o.id="cel";var cs=["#ffd21f","#3fcf5f","#fff","#ff8a3d","#5ec8ff"],h='';
+  for(var i=0;i<40;i++)h+='<i style="left:'+Math.random()*100+'%;background:'+cs[i%5]+';animation-duration:'+(2+Math.random()*2.5)+'s;animation-delay:'+Math.random()*.8+'s"></i>';
+  o.innerHTML=h+'<div class="bx"><div class="em">🎉</div><h2>মাশাআল্লাহ!</h2><p>আজকের সব আমল সম্পন্ন হয়েছে।<br>আল্লাহ কবুল করুন।</p><button>আলহামদুলিল্লাহ</button></div>';
+  o.onclick=function(){o.remove()};document.body.appendChild(o);setTimeout(function(){if(o.parentNode)o.remove()},7000)}
+
+var CICO={fard:["🌅","☀️","🌤️","🌇","🌙"],nafl:["🌞","✨"],quran:["📖","📚","📜"],dua:["🌄","🌆","🛡️","🤲","😴"],self:["💚","🎁","📝"]};
+function amal(){
+  var k=S.day,c=count(k),h=week(),p=c/TOTAL,C=2*Math.PI*40,
+  msg=c===0?"বিসমিল্লাহ বলে আজকের প্রথম আমলটি শুরু করুন।":c===TOTAL?"মাশাআল্লাহ! আজকের সব আমল সম্পন্ন।":p<.5?"চলতে থাকুন, আল্লাহ সাহায্য করবেন।":"চমৎকার! আর একটু বাকি।";
+  h+='<div class="card sumc sm" style="margin-top:0"><div class="rg"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="9"/><circle cx="50" cy="50" r="40" fill="none" stroke="#ffd21f" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+(C*p)+' '+C+'"/></svg><b>'+bn(Math.round(p*100))+'%</b></div><div class="tx"><div class="t1">আজকের আমল</div><div class="t2">'+bn(c)+'/'+bn(TOTAL)+' সম্পন্ন</div><div class="t3">'+msg+'</div></div></div>';
+  CATS.forEach(function(ct){var cc=count(k,ct.id),open=S.open[ct.id],dn=cc===ct.it.length;
+    h+='<div class="card'+(open?' open':'')+(dn?' done':'')+'"><button class="hd" data-o="'+ct.id+'"><span class="bi">'+ct.ic+'</span><div style="flex:1;min-width:0"><div class="tr"><h3>'+ct.t+'</h3><b>'+(dn?'✓ ':'')+bn(cc)+'/'+bn(ct.it.length)+'</b></div><div class="bar"><span style="width:'+cc/ct.it.length*100+'%"></span></div></div><span class="chev">⌃</span></button><div class="body">';
+    ct.it.forEach(function(x,i){var on=isOn(k,ct.id+i);h+='<div class="itm'+(on?' dn':'')+'"><div class="ico">'+((CICO[ct.id]||[])[i]||ct.ic)+'</div><span>'+x+'</span><button class="ck'+(on?' on':'')+'" data-t="'+ct.id+i+'" aria-label="'+x+'">'+(on?'✓':'')+'</button></div>'});
+    h+='</div></div>'});
+  return '<div class="ax">'+h+'</div>'}
 function applyTheme(){var t=store("theme")||"auto",r=document.documentElement;if(t==="auto")r.removeAttribute("data-theme");else r.setAttribute("data-theme",t)}
 var TABS=[["home","🏠","হোম"],["amal","✅","আমল"],["feat","🧰","ফিচার্স"],["dua","🤲","দোয়া"],["more","☰","অন্যান্য"]];
 function render(){
