@@ -363,6 +363,31 @@ body.night .sheet,body.night .prog{filter:brightness(.82)}
 .ax .ico{font-size:21px}
 .ax .itm.dn span{color:#0a7a2f;font-weight:700}
 .ax .itm span{font-size:17px}
+
+.ax .dbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 12px 0;color:#fff}
+.ax .dbar .dt{font-size:17px;font-weight:700;color:#ffd21f}
+.ax .dbar .dt small{display:block;font-size:12.5px;font-weight:500;color:#cfe8d3}
+.ax .dbar .acts{display:flex;gap:8px}
+.ax .dbar button{border:1.5px solid #d8b13c;background:rgba(255,210,31,.14);color:#ffd21f;border-radius:99px;font-family:inherit;font-size:14px;font-weight:700;padding:7px 14px;cursor:pointer}
+.ax .dbar button.cal{font-size:18px;padding:5px 12px}
+#calm{position:fixed;inset:0;z-index:97;background:rgba(0,16,8,.72);display:flex;align-items:flex-end;justify-content:center;animation:fadein .2s}
+#calm .sh2{width:100%;max-width:520px;background:linear-gradient(180deg,#0d4a2b,#082e1b);border:1.5px solid #d8b13c;border-bottom:0;border-radius:26px 26px 0 0;padding:16px 14px 22px;color:#fff;animation:up .25s}
+@keyframes up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+#calm .hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+#calm .hdr b{font-size:19px;color:#ffd21f}
+#calm .hdr button{width:40px;height:40px;border-radius:50%;border:1.5px solid #d8b13c;background:rgba(255,255,255,.08);color:#ffd21f;font-size:20px;cursor:pointer;font-family:inherit}
+#calm .hdr button:disabled{opacity:.3}
+#calm .gr{display:grid;grid-template-columns:repeat(7,1fr);gap:6px 2px;text-align:center}
+#calm .gr .w{font-size:12.5px;color:#cfe8d3;padding:4px 0}
+#calm .gr .c{aspect-ratio:1;border:0;border-radius:50%;padding:3px;cursor:pointer;font-family:inherit;background:rgba(255,255,255,.14);display:block}
+#calm .gr .c span{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:#0a3a22;color:#fff;font-size:15px;font-weight:600}
+#calm .gr .c.full{background:#ffd21f}#calm .gr .c.full span{background:#c99a2a;color:#143d22;font-weight:700}
+#calm .gr .c.td span{box-shadow:0 0 0 2px #fff inset}
+#calm .gr .c.sel span{background:#127a2e;box-shadow:0 0 0 2px #ffd21f inset}
+#calm .gr .c:disabled{opacity:.28;cursor:default}
+#calm .gr .e{visibility:hidden}
+#calm .lg{display:flex;gap:14px;justify-content:center;margin-top:12px;font-size:12.5px;color:#cfe8d3}
+#calm .lg i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px}
 </style>
 </head>
 <body>
@@ -882,12 +907,45 @@ var CICO={fard:["🌅","☀️","🌤️","🌇","🌙"],nafl:["🌞","✨"],qur
 function amal(){
   var k=S.day,c=count(k),h=week(),p=c/TOTAL,C=2*Math.PI*40,
   msg=c===0?"বিসমিল্লাহ বলে আজকের প্রথম আমলটি শুরু করুন।":c===TOTAL?"মাশাআল্লাহ! আজকের সব আমল সম্পন্ন।":p<.5?"চলতে থাকুন, আল্লাহ সাহায্য করবেন।":"চমৎকার! আর একটু বাকি।";
-  h+='<div class="card sumc sm" style="margin-top:0"><div class="rg"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="9"/><circle cx="50" cy="50" r="40" fill="none" stroke="#ffd21f" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+(C*p)+' '+C+'"/></svg><b>'+bn(Math.round(p*100))+'%</b></div><div class="tx"><div class="t1">আজকের আমল</div><div class="t2">'+bn(c)+'/'+bn(TOTAL)+' সম্পন্ন</div><div class="t3">'+msg+'</div></div></div>';
+  h+='<div class="card sumc sm" style="margin-top:0"><div class="rg"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="9"/><circle cx="50" cy="50" r="40" fill="none" stroke="#ffd21f" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+(C*p)+' '+C+'"/></svg><b>'+bn(Math.round(p*100))+'%</b></div><div class="tx"><div class="t1">'+(S.day===key(dnow())?"আজকের আমল":"এই দিনের আমল")+'</div><div class="t2">'+bn(c)+'/'+bn(TOTAL)+' সম্পন্ন</div><div class="t3">'+msg+'</div></div></div>';
   CATS.forEach(function(ct){var cc=count(k,ct.id),open=S.open[ct.id],dn=cc===ct.it.length;
     h+='<div class="card'+(open?' open':'')+(dn?' done':'')+'"><button class="hd" data-o="'+ct.id+'"><span class="bi">'+ct.ic+'</span><div style="flex:1;min-width:0"><div class="tr"><h3>'+ct.t+'</h3><b>'+(dn?'✓ ':'')+bn(cc)+'/'+bn(ct.it.length)+'</b></div><div class="bar"><span style="width:'+cc/ct.it.length*100+'%"></span></div></div><span class="chev">⌃</span></button><div class="body">';
     ct.it.forEach(function(x,i){var on=isOn(k,ct.id+i);h+='<div class="itm'+(on?' dn':'')+'"><div class="ico">'+((CICO[ct.id]||[])[i]||ct.ic)+'</div><span>'+x+'</span><button class="ck'+(on?' on':'')+'" data-t="'+ct.id+i+'" aria-label="'+x+'">'+(on?'✓':'')+'</button></div>'});
     h+='</div></div>'});
   return '<div class="ax">'+h+'</div>'}
+
+
+function calHTML(){
+  var m=S.cal,td=key(dnow()),ty=+td.slice(0,4),tm=+td.slice(5,7)-1,
+  first=new Date(Date.UTC(m.y,m.m,1)).getUTCDay(),n=new Date(Date.UTC(m.y,m.m+1,0)).getUTCDate(),g='';
+  WS.forEach(function(w){g+='<div class="w">'+w+'</div>'});
+  for(var i=0;i<first;i++)g+='<div class="e"></div>';
+  for(var d=1;d<=n;d++){var k=m.y+"-"+pad(m.m+1)+"-"+pad(d),p=count(k)/TOTAL,fut=k>td;
+    var bg=p>=1?'':(p>0?' style="background:conic-gradient(#ffd21f '+Math.round(p*360)+'deg,rgba(255,255,255,.14) 0)"':'');
+    g+='<button class="c'+(p>=1?' full':'')+(k===td?' td':'')+(k===S.day?' sel':'')+'"'+bg+' data-calday="'+k+'"'+(fut?' disabled':'')+'><span>'+bn(d)+'</span></button>'}
+  var atMax=m.y>ty||(m.y===ty&&m.m>=tm);
+  return '<div class="sh2"><div class="hdr"><button data-calnav="-1" aria-label="আগের মাস">‹</button><b>'+EM[m.m]+' '+bn(m.y)+'</b><button data-calnav="1" aria-label="পরের মাস"'+(atMax?' disabled':'')+'>›</button></div><div class="gr">'+g+'</div><div class="lg"><span><i style="background:#ffd21f"></i>সব আমল সম্পন্ন</span><span><i style="background:conic-gradient(#ffd21f 120deg,rgba(255,255,255,.3) 0)"></i>আংশিক</span><span><i style="background:rgba(255,255,255,.3)"></i>কিছু না</span></div></div>'}
+function calOpen(){var d=new Date(Date.parse((S.day||key(dnow()))+"T00:00:00Z"));S.cal={y:d.getUTCFullYear(),m:d.getUTCMonth()};
+  var o=document.createElement("div");o.id="calm";o.innerHTML=calHTML();document.body.appendChild(o)}
+function calClose(){var o=document.getElementById("calm");if(o)o.remove()}
+document.addEventListener("click",function(e){
+  var o=document.getElementById("calm");
+  if(o&&e.target===o){calClose();return}
+  var t=e.target.closest&&e.target.closest("button");if(!t)return;
+  if(t.dataset.cal){calOpen();return}
+  if(t.dataset.calnav){var m=S.cal;m.m+=+t.dataset.calnav;if(m.m<0){m.m=11;m.y--}if(m.m>11){m.m=0;m.y++}o.innerHTML=calHTML();return}
+  if(t.dataset.calday){S.day=t.dataset.calday;S.wkc=S.day;calClose();render();return}
+  if(t.dataset.today){S.day=key(dnow());S.wkc=null;render()}});
+function dlab(k){var a=k.split("-");return bn(+a[2])+" "+EM[+a[1]-1]+" "+bn(+a[0])}
+function week(){
+  var td=key(dnow()),n=S.wkc?new Date(Date.parse(S.wkc+"T12:00:00Z")):dnow(),h='<div class="week">';
+  for(var i=-3;i<=3;i++){var dt=new Date(n.getTime()+i*864e5),k=key(dt),fut=k>td,p=count(k)/TOTAL;
+    h+='<button class="d'+(k===S.day?' sel':'')+'" data-d="'+k+'"'+(fut?' disabled style="opacity:.35"':'')+'>'+WS[dt.getUTCDay()]+'<i>'+(k===S.day?'':(!fut?ARCS(p,46,3):''))+bn(dt.getUTCDate())+'</i></button>'}
+  return h+'</div>'}
+var _amal6=amal;
+amal=function(){var td=key(dnow()),isT=S.day===td,
+  bar='<div class="ax" style="padding:0"><div class="dbar"><div class="dt">'+(isT?'আজ':dlab(S.day))+'<small>'+(isT?dlab(td):'এই দিনের আমল দেখছেন')+'</small></div><div class="acts">'+(isT?'':'<button data-today="1">আজ</button>')+'<button class="cal" data-cal="1" aria-label="ক্যালেন্ডার">📅</button></div></div></div>';
+  return bar+_amal6()};
 function applyTheme(){var t=store("theme")||"auto",r=document.documentElement;if(t==="auto")r.removeAttribute("data-theme");else r.setAttribute("data-theme",t)}
 var TABS=[["home","🏠","হোম"],["amal","✅","আমল"],["feat","🧰","ফিচার্স"],["dua","🤲","দোয়া"],["more","☰","অন্যান্য"]];
 function render(){
@@ -905,7 +963,7 @@ document.addEventListener("click",function(e){
   if(b.dataset.o){S.open[b.dataset.o]=!S.open[b.dataset.o];render();return}
   if(b.dataset.x){S.bd=S.fbs;render();return}
   if(b.dataset.sub!==undefined){S.tab="feat";S.goal=null;S.sub=b.dataset.sub;render();return}
-  if(b.dataset.g){S.goal=b.dataset.g;render();document.getElementById("main").scrollTop=0;return}
+  if(b.dataset.g){S.tab="home";S.goal=b.dataset.g;render();document.getElementById("main").scrollTop=0;return}
   if(b.dataset.ii!==undefined){S.ii=+b.dataset.ii;render();return}
   if(b.dataset.di!==undefined){S.di=+b.dataset.di;render();return}
   if(b.dataset.zi!==undefined){S.zi=+b.dataset.zi;render();return}
